@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Diaz</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS v4 via CDN -->
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Gradient Background Effect */
+    .bg-grid-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .dark .bg-grid-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    }
+
+    /* Base state sebelum elemen terlihat */
+      .reveal-left, .reveal-right, .reveal-up {
+        opacity: 0;
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+
+      /* Elemen Kiri: Muncul dari kiri */
+      .reveal-left {
+        transform: translateX(-50px);
+      }
+
+      /* Elemen Kanan: Muncul dari kanan */
+      .reveal-right {
+        transform: translateX(50px);
+      }
+
+      /* Elemen Standar: Muncul dari bawah (untuk section 1 kolom) */
+      .reveal-up {
+        transform: translateY(35px);
+      }
+
+      /* Active state saat masuk viewport */
+      .reveal-left.active,
+      .reveal-right.active,
+      .reveal-up.active {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 transition-colors duration-300">
+
+  <!-- Grid Background Overlay -->
+  <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-md z-40 border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="font-mono font-bold text-lg text-cyan-400 flex items-center gap-2">
+        <i data-lucide="cpu" class="w-5 h-5"></i>
+        <span>Diaztara</span>
+      </a>
+      
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+        <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+        <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
+        <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="p-2 text-slate-400 hover:text-cyan-400 rounded-lg border border-slate-800 bg-slate-900">
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+          <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+        </button>
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 text-xs font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 px-3 py-1.5 rounded-md hover:bg-cyan-500/20 transition-all">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          Available for hire
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="relative z-10 max-w-6xl mx-auto px-6 pt-24 space-y-32">
+
+    <!-- HERO SECTION -->
+    <section class="min-h-[85vh] flex items-center pt-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+        
+        <!-- KOLOM KIRI: Teks & Identitas -->
+        <div class="lg:col-span-7 flex flex-col justify-center items-start">
+          <!-- Badge Nama & Gelar -->
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-lg font-mono text-cyan-600 dark:text-cyan-400 mb-6">
+            <span>Muhammad Nur Diaztara, S.T.</span>
+          </div>
+
+          <!-- Heading Utama -->
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
+            Hi, I'm <span class="text-cyan-600 dark:text-cyan-400">Diaztara</span>
+          </h1>
+
+          <!-- Deskripsi -->
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mb-8 leading-relaxed">
+            Bachelor of Computer Engineering with a focus on modern IoT system, real-time computer vision, and edge AI processing.
+          </p>
+
+          <!-- Tombol Aksi (CTA) -->
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#projects"
+              class="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold px-6 py-3 rounded-lg transition-all shadow-lg shadow-cyan-500/20">
+              <i data-lucide="folder-code" class="w-4 h-4"></i>
+              View My Projects
+            </a>
+            <a href="#resume"
+              class="inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 px-6 py-3 rounded-lg transition-all">
+              <i data-lucide="file-down" class="w-4 h-4"></i>
+              Download CV
+            </a>
+            <a href="#contact"
+              class="inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 px-6 py-3 rounded-lg transition-all">
+              <i data-lucide="phone" class="w-4 h-4"></i>
+              Contact Me
+            </a>
+          </div>
+        </div>
+
+        <!-- KOLOM KANAN: Foto Profil dengan Technical Frame -->
+        <div class="lg:col-span-5 flex justify-center items-center relative">
+          <div class="relative w-64 h-64 sm:w-80 sm:h-80 group">
+            <!-- Glow Effect di Belakang Foto -->
+            <div class="absolute -inset-1 bg-linear-to-r from-cyan-500 to-indigo-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-75 transition duration-500"></div>
+
+            <!-- Container Foto -->
+            <div class="relative w-full h-full rounded-2xl bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 overflow-hidden shadow-2xl flex items-center justify-center">
+              <!-- Ganti 'photo.jpg' dengan path/url foto kamu -->
+              <img src="src/assets/profile-photo.jpg" alt="Muhammad Nur Diaztara" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" />
+
+              <!-- Overlay Badge Technical (Opsional) -->
+              <div class="absolute bottom-3 left-3 right-3 bg-slate-900/80 backdrop-blur-md border border-slate-700/50 p-2.5 rounded-lg flex items-center justify-between text-[11px] font-mono text-slate-300">
+                <span class="flex items-center gap-1.5 text-cyan-400">
+                  <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                  Status: Ready to work
+                </span>
+                <span class="text-slate-500">CE/AI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT ME & QUICK FACTS -->
+    <section id="about" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="reveal-left lg:col-span-7 space-y-6">
+        <h2 class="text-2xl font-bold font-mono text-cyan-400 flex items-center gap-2">
+          About Me
+        </h2>
+        <p class="text-slate-300 leading-relaxed text-lg">
+          I am a Bachelor of Computer Engineering passionate about technology and innovation, with a strong focus on Internet of Things (IoT), Artificial Intelligence (AI), and Machine Learning. I’m currently expanding my expertise in web development to support and integrate my knowledge across multiple technological fields. I enjoy developing solutions that integrate hardware, software, and AI to solve real-world problems. I'm always open to new opportunities, collaboration, or discussions in the field of smart systems and digital innovation.
+        </p>
+      </div>
+
+      <!-- Quick Facts Box -->
+      <div class="reveal-right lg:col-span-5 bg-slate-900/60 border border-slate-800 rounded-xl p-6 backdrop-blur-sm space-y-6">
+        <h3 class="text-sm font-mono uppercase tracking-wider text-slate-400 border-b border-slate-800 pb-3">Quick Facts</h3>
+        
+        <div class="space-y-4 text-sm">
+          <div class="flex items-start gap-3">
+            <i data-lucide="graduation-cap" class="w-5 h-5 text-indigo-400 shrink-0 mt-0.5"></i>
+            <div>
+              <p class="font-semibold text-slate-200">Education</p>
+              <p class="text-slate-400">Bachelor of Computer Engineering</p>
+              <p class="text-slate-400 text-xs font-mono">Universitas Andalas (2022–2026)</p>
+              <p class="text-slate-400 text-xs font-mono">GPA: 3.71</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <i data-lucide="wrench" class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5"></i>
+            <div>
+              <p class="font-semibold text-slate-200">Interests</p>
+              <p class="text-slate-400">IoT, AI, Machine Learning, Data, Software Engineering</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <i data-lucide="map-pin" class="w-5 h-5 text-rose-400 shrink-0 mt-0.5"></i>
+            <div>
+              <p class="font-semibold text-slate-200">Location</p>
+              <p class="text-slate-400">Indonesia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="reveal-up space-y-8">
+      <h2 class="text-2xl font-bold font-mono text-cyan-400 flex items-center gap-2">
+        Technical Skills
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Programming -->
+        <div class="bg-slate-900/40 border border-slate-800/80 rounded-xl p-6 hover:border-slate-700 transition-all">
+          <div class="flex items-center gap-3 mb-4 text-cyan-400">
+            <i data-lucide="code-2" class="w-5 h-5"></i>
+            <h3 class="font-mono font-semibold">Programming</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Python</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">C/C++</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">JavaScript</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">PHP</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">MySQL</span>
+          </div>
+        </div>
+
+        <!-- AI & Computer Vision -->
+        <div class="bg-slate-900/40 border border-slate-800/80 rounded-xl p-6 hover:border-slate-700 transition-all">
+          <div class="flex items-center gap-3 mb-4 text-indigo-400">
+            <i data-lucide="brain" class="w-5 h-5"></i>
+            <h3 class="font-mono font-semibold">AI & Machine Learning</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">SVM</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Random Forest</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">KNN</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">CNN</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">YOLO</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Transformer</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">BERT</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">TensorFlow</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">OpenCV</span>
+          </div>
+        </div>
+
+        <!-- Data Analytics -->
+        <div class="bg-slate-900/40 border border-slate-800/80 rounded-xl p-6 hover:border-slate-700 transition-all">
+          <div class="flex items-center gap-3 mb-4 text-orange-400">
+            <i data-lucide="brain" class="w-5 h-5"></i>
+            <h3 class="font-mono font-semibold">Data Analytics</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Excel</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Pandas</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">NumPy</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Matplotlib</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Seaborn</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Streamlit</span>
+          </div>
+        </div>
+
+        <!-- Embedded & IoT -->
+        <div class="bg-slate-900/40 border border-slate-800/80 rounded-xl p-6 hover:border-slate-700 transition-all">
+          <div class="flex items-center gap-3 mb-4 text-emerald-400">
+            <i data-lucide="microchip" class="w-5 h-5"></i>
+            <h3 class="font-mono font-semibold">Embedded & IoT</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Raspberry Pi</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">ESP32</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Arduino</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">MQTT</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Sensors</span>
+          </div>
+        </div>
+
+        <!-- Web Development -->
+        <div class="bg-slate-900/40 border border-slate-800/80 rounded-xl p-6 hover:border-slate-700 transition-all">
+          <div class="flex items-center gap-3 mb-4 text-amber-400">
+            <i data-lucide="layout" class="w-5 h-5"></i>
+            <h3 class="font-mono font-semibold">Web Development</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">React</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Tailwind CSS</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Bootstrap</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Node.js</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Laravel</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Flask</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">REST API</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Firebase</span>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="bg-slate-900/40 border border-slate-800/80 rounded-xl p-6 hover:border-slate-700 transition-all">
+          <div class="flex items-center gap-3 mb-4 text-purple-400">
+            <i data-lucide="terminal" class="w-5 h-5"></i>
+            <h3 class="font-mono font-semibold">Tools</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Git / GitHub</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Linux</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Postman</span>
+            <span class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Microsoft Azure</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOFT SKILLS SECTION -->
+    <section id="soft-skills" class="reveal-up space-y-8">
+      <div class="space-y-2">
+        <h2 class="text-2xl font-bold font-mono text-cyan-600 dark:text-cyan-400 flex items-center gap-2">
+          Soft Skills
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Skill 1: Cross-Disciplinary Collaboration -->
+        <div class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="users" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 dark:text-slate-100 text-base mb-2">
+            Teamwork
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+            Mampu menjembatani komunikasi teknis antara tim hardware, software, dan tim AI.
+          </p>
+        </div>
+
+        <!-- Skill 2: Critical Thinking -->
+        <div class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="brain" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 dark:text-slate-100 text-base mb-2">
+            Critical Thinking
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+            Mampu berpikir kritis dan mengevaluasi informasi dengan baik.
+          </p>
+        </div>
+
+        <!-- Skill 3: Adaptability & Rapid Learning -->
+        <div class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 dark:text-slate-100 text-base mb-2">
+            Adaptability
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+            Cepat mempelajari dan beradaptasi pada teknologi baru.
+          </p>
+        </div>
+
+        <!-- Skill 4: Time Management -->
+        <div class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="clock" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 dark:text-slate-100 text-base mb-2">
+            Time Management
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+            Terbiasa bekerja dengan target yang jelas.
+          </p>
+        </div>
+
+        <!-- Skill 5: Communication -->
+        <div class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 dark:text-slate-100 text-base mb-2">
+            Communication
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+            Mampu berkomunikasi dengan jelas dan efektif dalam berbagai situasi.
+          </p>
+        </div>
+
+        <!-- Skill 6: Problem Solving -->
+        <div class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="bug" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 dark:text-slate-100 text-base mb-2">
+            Problem Solving
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+            Mampu mengidentifikasi masalah dan menemukan solusi yang efektif.
+          </p>
+        </div>
+
+        <!-- Skill 7: Leadership -->
+        <div class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="crown" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 dark:text-slate-100 text-base mb-2">
+            Leadership
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+            Mampu memimpin tim dan mengelola proyek dengan baik.
+          </p>
+        </div>
+
+        <!-- Skill 8: Emotional Intelligence -->
+        <div class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
+          <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="heart" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 dark:text-slate-100 text-base mb-2">
+            Emotional Intelligence
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
+            Mampu memahami dan mengelola emosi diri sendiri dan orang lain.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="reveal-up space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-bold font-mono text-cyan-400 flex items-center gap-2">
+            Projects
+          </h2>
+          <p class="text-slate-400 text-sm mt-1">Klik card untuk membuka detail teknis, hardware setup, dan arsitektur sistem.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- CARD 1: Cafe Monitoring -->
+        <div onclick="openModal('modal-cafe')" class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+          <div>
+            <!-- Image Placeholder / Preview -->
+            <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+                <img src="src/assets/projects/cafe-monitoring.jpeg" alt="Cafe Monitoring System" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />    
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Cafe Monitoring System</h3>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+              </div>
+              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                Sistem pemantauan kafe cerdas yang memanfaatkan teknologi penglihatan komputer untuk memantau waktu tunggu pelanggan dan kondisi meja.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Raspberry Pi 5</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">YOLOv8</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Hailo-8L</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">MQTT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: Serupiah Web App -->
+        <div onclick="openModal('modal-serupiah')" class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+          <div>
+            <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+                <img src="src/assets/projects/serupiah-web.jpg" alt="Serupiah Web App" class="w-full h-full object-cover object-center">
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Serupiah Web App</h3>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+              </div>
+              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                Sebuah aplikasi web interaktif berbasis AI yang dirancang untuk mengubah cara siswa mempelajari sejarah Indonesia melalui uang kertas.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">MobileNetV3</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">TensorFlow.js</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">React</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: Gojek Sentiment Analysis -->
+        <div onclick="openModal('modal-gojek')" class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+          <div>
+            <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+              <img src="src/assets/projects/gojek-sentiment.png" alt="Gojek Sentiment Analysis" class="w-full h-full object-cover object-center">
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Gojek Sentiment Analysis</h3>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+              </div>
+              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                Klasifikasi sentimen berskala besar untuk lebih dari 30.000 ulasan pengguna Gojek di Indonesia dengan menggunakan Transformer dan model ML.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">NLP</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">IndoBERT</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">TF-IDF</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">SVM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4: Sentiment Classification Web -->
+        <div onclick="openModal('modal-sentiment')" class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+          <div>
+            <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+              <img src="src/assets/projects/sentiment-analysis.png" alt="Sentiment Analysis Web" class="w-full h-full object-cover object-center">
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Sentiment Classification Web</h3>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+              </div>
+              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                Aplikasi web berbasis AI untuk menganalisis sentimen komentar pengguna dengan menggunakan model BERT dan Transformer untuk klasifikasi teks bahasa Inggris.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">NLP</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">BERT</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Transformer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5: Nagari Guguak Malalo Web -->
+        <div onclick="openModal('modal-nagari')" class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+          <div>
+            <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+              <img src="src/assets/projects/nagari-web.png" alt="Nagari Guguak Malalo Web" class="w-full h-full object-cover object-center">
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Nagari Guguak Malalo Web</h3>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+              </div>
+              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                Platform digital berbasis web yang dikembangkan untuk mendukung layanan publik di salah satu nagari di Kabupaten Tanah Datar, Sumatera Barat.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Laravel</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Javascript</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Bootstrap</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 6: Running Text -->
+        <div onclick="openModal('modal-running-text')" class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+          <div>
+            <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+              <img src="src/assets/projects/running-text.jpeg" alt="Running Text Web" class="w-full h-full object-cover object-center">
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Running Text Information Board</h3>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+              </div>
+              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                Running Text LED sebagai papan informasi dan pemberitahuan untuk dipasang di tempat umum.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Embedded System</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">IoT</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Electronics</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & VOLUNTEER SECTION -->
+    <section id="experience-volunteer" class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Experience Section -->
+      <div class="reveal-left space-y-6">
+        <h2 class="text-2xl font-bold font-mono text-cyan-400 flex items-center gap-2">
+          Experience
+        </h2>
+        <div class="border-l-2 border-slate-800 pl-6 space-y-10">
+          
+          <!-- Item 1: Lab System Digital -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-cyan-400 ring-4 ring-slate-950"></span>
+            <span class="text-xs font-mono text-cyan-400">Jun 2025 - Jul 2026</span>
+            <h3 class="font-bold text-slate-100 text-lg">Koordinator Asisten Laboratorium</h3>
+            <p class="text-xs text-slate-400 mb-2">Laboratorium Sistem Digital dan Arsitektur Komputer — Padang, Indonesia</p>
+            <p class="text-sm text-slate-400 mb-4">Memimpin asisten laboratorium dan mengelola operasional praktikum</p>
+            
+            <!-- Documentation Photos Grid -->
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/foto-asisten.jpeg" alt="Asisten Lab" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Asisten Lab</span>
+                </div>
+              </div>
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/training-asisten.jpeg" alt="Pelatihan" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Pelatihan Asisten</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: PT PLN (Persero) -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+            <span class="text-xs font-mono text-slate-400">Jan 2025 - Feb 2025</span>
+            <h3 class="font-bold text-slate-100 text-lg">Data Analyst Intern</h3>
+            <p class="text-xs text-slate-400 mb-2">PT. PLN (Persero) ULP Belanti — Padang, Indonesia</p>
+            <p class="text-sm text-slate-400 mb-4">Mengelola data transaksi perusahaan, implementasi Network Attached Storage (NAS) menggunakan Nextcloud, dan monitoring trafo di lapangan.</p>
+            
+            <!-- Documentation Photos Grid -->
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/peserta-magang.jpeg" alt="Survey Trafo PLN" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Peserta Magang</span>
+                </div>
+              </div>
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/nextcloud.jpeg" alt="Implementasi Server NAS" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Konfigurasi Nextcloud</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Programming Specialist -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+            <span class="text-xs font-mono text-slate-400">Feb 2025 - Nov 2025</span>
+            <h3 class="font-bold text-slate-100 text-lg">Programming Specialist</h3>
+            <p class="text-xs text-slate-400 mb-2">Universitas Andalas Robotic Team — Padang, Indonesia</p>
+            <p class="text-sm text-slate-400 mb-4">Bertanggung jawab dalam pemograman mikrokontroler dan implementasi perangkat keras sistem robotika.</p>
+            
+            <!-- Documentation Photos Grid -->
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/sensor-leveling.jpeg" alt="Pelatihan Mikrokontroler" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Pelatihan Mikrokontroler</span>
+                </div>
+              </div>
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/comvis-leveling.jpeg" alt="Pelatihan Computer Vision" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Pelatihan Computer Vision</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Research and Development -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+            <span class="text-xs font-mono text-slate-400">Sep 2024 - Jul 2025</span>
+            <h3 class="font-bold text-slate-100 text-lg">Staff Research and Development</h3>
+            <p class="text-xs text-slate-400 mb-2">Laboratorium Sistem Digital dan Arsitektur Komputer — Padang, Indonesia</p>
+            <p class="text-sm text-slate-400 mb-4">Berkontribusi dalam penelitian dan pengembangan sistem digital serta arsitektur komputer.</p>
+            
+            <!-- Documentation Photos Grid -->
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/asisten-lab.JPG" alt="Asisten Laboratorium" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Asisten Laboratorium</span>
+                </div>
+              </div>
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/pameran-lab.jpeg" alt="Pameran Lab" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Pameran Lab</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Badan Eksekutif Mahasiswa FTI -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+            <span class="text-xs font-mono text-slate-400">Feb 2024 - Dec 2024</span>
+            <h3 class="font-bold text-slate-100 text-lg">Staff Advokasi dan Kesejahteraan Mahasiswa</h3>
+            <p class="text-xs text-slate-400 mb-2">Badan Eksekutif Mahasiswa FTI — Padang, Indonesia</p>
+            <p class="text-sm text-slate-400 mb-4">Berkontribusi dalam mengawal advokasi dan kesejahteraan mahasiswa.</p>
+
+            <!-- Documentation Photos Grid -->
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/adkesma.JPG" alt="Adkesma FTI" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Adkesma FTI</span>
+                </div>
+              </div>
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/bem.jpeg" alt="BEM KM FTI" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">BEM KM FTI</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: Himpunan Mahasiswa Teknik Komputer -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+            <span class="text-xs font-mono text-slate-400">Feb 2024 - Dec 2024</span>
+            <h3 class="font-bold text-slate-100 text-lg">Bendahara Internal</h3>
+            <p class="text-xs text-slate-400 mb-2">Himpunan Mahasiswa Teknik Komputer — Padang, Indonesia</p>
+            <p class="text-sm text-slate-400 mb-4">Bertanggung jawab dalam pengelolaan keuangan Divisi Internal.</p>
+
+            <!-- Documentation Photos Grid -->
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/himatekom.jpeg" alt="HIMATEKOM" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">HIMATEKOM</span>
+                </div>
+              </div>
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/himatekom-graduation.JPG" alt="Arak - arak Wisuda" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Arak - arak Wisuda</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Volunteer -->
+      <div class="reveal-right space-y-6">
+        <h2 class="text-2xl font-bold font-mono text-cyan-400 flex items-center gap-2">
+          Volunteer
+        </h2>
+        <div class="border-l-2 border-slate-800 pl-6 space-y-10">
+          
+          <!-- Item 1: Pengabdian Masyarakat -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-cyan-400 ring-4 ring-slate-950"></span>
+            <span class="text-xs font-mono text-cyan-400">Jan 2026</span>
+            <h3 class="font-bold text-slate-100 text-lg">Running Text Development</h3>
+            <p class="text-xs text-slate-400 mb-2">Teknik Komputer Universitas Andalas — Padang, Indonesia</p>
+            <p class="text-sm text-slate-400 mb-4">Mengembangkan Papan Informasi Running Text untuk media informasi di Kebun Binatang Kinantan, Bukittingi.</p>
+            
+            <!-- Documentation Photos Grid -->
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/pengabdian-masyarakat.jpeg" alt="Pengabdian Masyarakat" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Pengabdian Masyarakat</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Pemateri Workshop UI/UX -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+            <span class="text-xs font-mono text-slate-400">Oct 2025</span>
+            <h3 class="font-bold text-slate-100 text-lg">Pemateri Workshop UI/UX</h3>
+            <p class="text-xs text-slate-400 mb-2">Himpunan Mahasiswa Teknik Komputer — Padang, Indonesia</p>
+            <p class="text-sm text-slate-400 mb-4">Memberikan materi tentang prinsip dasar desain antarmuka pengguna dan pengalaman pengguna.</p>
+            
+            <!-- Documentation Photos Grid -->
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/dokumentasi-uiux.jpeg" alt="Dokumentasi Workshop UI/UX" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Dokumentasi Workshop UI/UX</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Pemateri Workshop Python -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+            <span class="text-xs font-mono text-slate-400">Sep 2025</span>
+            <h3 class="font-bold text-slate-100 text-lg">Pemateri Workshop Dasar Python</h3>
+            <p class="text-xs text-slate-400 mb-2">Badan Eksekutif Mahasiswa FTI — Padang, Indonesia</p>
+            <p class="text-sm text-slate-400 mb-4">Memberikan materi tentang pemecahan masalah dan dasar-dasar pemrograman Python.</p>
+            
+            <!-- Documentation Photos Grid -->
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/dokumentasi-python.jpeg" alt="Dokumentasi Workshop Dasar Python" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Dokumentasi Workshop Dasar Python</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: CORE3D 2025 -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+            <span class="text-xs font-mono text-slate-400">Oct 2024 - May 2025</span>
+            <h3 class="font-bold text-slate-100 text-lg">Koordinator Sponsorship</h3>
+            <p class="text-xs text-slate-400 mb-2">CORE3D 2025 — Padang, Indonesia</p>
+            <p class="text-sm text-slate-400 mb-4">Bertanggung jawab dalam memimpin tim sponsor untuk penggalangan dana dan kerja sama sponsorship untuk acara CORE3D 2025.</p>
+            
+            <!-- Documentation Photos Grid -->
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/core3d-2025.jpg" alt="Dokumentasi CORE3D 2025" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Divisi Sponsorship</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <!-- Item 5: BAKTI FTI 2024 -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+            <span class="text-xs font-mono text-slate-400">Apr 2024 - Aug 2024</span>
+            <h3 class="font-bold text-slate-100 text-lg">Staff Acara</h3>
+            <p class="text-xs text-slate-400 mb-2">Bimbingan Aktivitas Kemahasiswaan dalam Tradisi Ilmiah FTI 2024 — Padang, Indonesia</p>
+            <p class="text-sm text-slate-400 mb-4">Bertanggung jawab dalam perencanaan dan pelaksanaan acara BAKTI FTI 2024.</p>
+            
+            <!-- Documentation Photos Grid -->
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/acara-bakti.jpg" alt="Dokumentasi BAKTI FTI 2024" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Divisi Acara</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: CORE3D 2024 -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+            <span class="text-xs font-mono text-slate-400">Jan 2024 - May 2024</span>
+            <h3 class="font-bold text-slate-100 text-lg">Staff Sponsorship</h3>
+            <p class="text-xs text-slate-400 mb-2">CORE3D 2024 — Padang, Indonesia</p>
+            <p class="text-sm text-slate-400 mb-4">Bertanggung jawab dalam penggalangan dana dan sponsorship untuk acara CORE3D 2024.</p>
+            
+            <!-- Documentation Photos Grid -->
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/core3d-2024.jpeg" alt="Dokumentasi CORE3D 2024" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Divisi Sponsorship</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 7: LKMM-TD FTI 2023 -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+            <span class="text-xs font-mono text-slate-400">Apr 2023 - Sep 2023</span>
+            <h3 class="font-bold text-slate-100 text-lg">Staff Acara</h3>
+            <p class="text-xs text-slate-400 mb-2">Latihan Kepemimpinan Manajemen Mahasiswa Tingkat Dasar FTI 2023 — Padang, Indonesia</p>
+            <p class="text-sm text-slate-400 mb-4">Bertanggung jawab dalam perencanaan acara LKMM-TD FTI 2023 dan membimbing kelompok peserta.</p>
+
+            <!-- Documentation Photos Grid -->
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <div class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/lkmmtd.jpeg" alt="Dokumentasi LKMM-TD FTI 2023" class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Kelompok Andromeda</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS & TRAINING SECTION -->
+    <section id="training" class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Training -->
+      <div class="reveal-left space-y-6">
+        <h2 class="text-2xl font-bold font-mono text-cyan-400 flex items-center gap-2">
+          Training
+        </h2>
+        <div class="space-y-4">
+          <div class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
+            <div>
+              <h3 class="font-bold text-sm text-slate-200">Belajar Machine Learning untuk Pemula</h3>
+              <p class="text-xs text-slate-400">Dicoding Indonesia (Mar 2026)</p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
+            <div>
+              <h3 class="font-bold text-sm text-slate-200">Belajar Penerapan Data Science dengan Microsoft Fabric</h3>
+              <p class="text-xs text-slate-400">Dicoding Indonesia (Mar 2026)</p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
+            <div>
+              <h3 class="font-bold text-sm text-slate-200">Memulai Pemograman dengan Python</h3>
+              <p class="text-xs text-slate-400">Dicoding Indonesia (Feb 2026)</p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
+            <div>
+              <h3 class="font-bold text-sm text-slate-200">Machine Learning with Python</h3>
+              <p class="text-xs text-slate-400">Coursera (Nov 2025)</p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
+            <div>
+              <h3 class="font-bold text-sm text-slate-200">Developing Front-End Apps with React</h3>
+              <p class="text-xs text-slate-400">Coursera (Nov 2025)</p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
+            <div>
+              <h3 class="font-bold text-sm text-slate-200">Belajar Dasar Pemograman Javascript</h3>
+              <p class="text-xs text-slate-400">Dicoding Indonesia (Oct 2025)</p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
+            <div>
+              <h3 class="font-bold text-sm text-slate-200">Introduction to Deep Learning and Neural Networks with Keras</h3>
+              <p class="text-xs text-slate-400">Coursera (Sep 2025)</p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
+            <div>
+              <h3 class="font-bold text-sm text-slate-200">Exploratory Data Analysis for Machine Learning</h3>
+              <p class="text-xs text-slate-400">Coursera (May 2025)</p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
+            <div>
+              <h3 class="font-bold text-sm text-slate-200">Python for Data Science, AI & Development</h3>
+              <p class="text-xs text-slate-400">Coursera (Mar 2025)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="reveal-right space-y-6">
+        <h2 class="text-2xl font-bold font-mono text-cyan-400 flex items-center gap-2">
+          Certifications & Competitions
+        </h2>
+        <div class="space-y-4">
+          <div class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="award" class="w-6 h-6 text-amber-400 shrink-0"></i>
+            <div>
+              <h3 class="font-bold text-sm text-slate-200">Toefl Prediction</h3>
+              <p class="text-xs text-slate-400">Universitas Andalas (Aug 2025)</p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="award" class="w-6 h-6 text-amber-400 shrink-0"></i>
+            <div>
+              <h3 class="font-bold text-sm text-slate-200">IBM Deep Learning with PyTorch, Keras, and Tensorflow Professional Certificate</h3>
+              <p class="text-xs text-slate-400">Coursera (Dec 2025)</p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="award" class="w-6 h-6 text-amber-400 shrink-0"></i>
+            <div>
+              <h3 class="font-bold text-sm text-slate-200">Professional Skills for the Workplace</h3>
+              <p class="text-xs text-slate-400">Coursera (Dec 2025)</p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="award" class="w-6 h-6 text-amber-400 shrink-0"></i>
+            <div>
+              <h3 class="font-bold text-sm text-slate-200">Finalis Hackathon Firetech 2025</h3>
+              <p class="text-xs text-slate-400">Coursera (Nov 2025)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME CALLOUT -->
+    <section id="resume" class="reveal bg-slate-900 border border-slate-800 dark:bg-gradient-to-r dark:from-slate-900 dark:via-slate-900/90 dark:to-indigo-950/40 dark:border-slate-800 rounded-2xl p-8 md:p-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+      <div class="space-y-2 max-w-xl">
+        <h2 class="text-2xl font-bold text-white">Interested in working together?</h2>
+        <p class="text-slate-300 dark:text-slate-400 text-sm">
+          Download my resume to learn more about my education, experience, and technical background.
+        </p>
+      </div>
+
+      <!-- Tombol Download dengan atribut 'download' -->
+      <a href="CV_Muhammad_Nur_Diaztara.pdf" 
+        download="CV_Muhammad_Nur_Diaztara.pdf" 
+        class="shrink-0 inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl transition-all shadow-lg shadow-cyan-500/20 active:scale-95">
+        <i data-lucide="download" class="w-5 h-5"></i>
+        Download CV
+      </a>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="reveal text-center space-y-6 pt-12 pb-12 border-t border-slate-800/80">
+      <h2 class="text-3xl font-extrabold text-slate-100">Let's build something together.</h2>
+      <p class="text-slate-400 max-w-md mx-auto text-sm">
+        Tertarik berdiskusi seputar riset embedded AI, posisi kerja, atau kolaborasi proyek? Hubungi saya melalui media di bawah.
+      </p>
+
+      <div class="flex items-center justify-center gap-6 pt-4">
+        <a href="mailto:diaztara04@gmail.com" class="flex items-center gap-2 text-slate-300 hover:text-cyan-400 font-mono text-sm transition-colors border border-slate-800 bg-slate-900 px-4 py-2 rounded-lg">
+          <i data-lucide="mail" class="w-4 h-4"></i> Email
+        </a>
+        <a href="https://www.linkedin.com/in/muhammad-nur-diaztara-1b5b6b304/" target="_blank" class="flex items-center gap-2 text-slate-300 hover:text-cyan-400 font-mono text-sm transition-colors border border-slate-800 bg-slate-900 px-4 py-2 rounded-lg">
+          <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+        </a>
+        <a href="https://github.com/LegolasCode" target="_blank" class="flex items-center gap-2 text-slate-300 hover:text-cyan-400 font-mono text-sm transition-colors border border-slate-800 bg-slate-900 px-4 py-2 rounded-lg">
+          <i data-lucide="github" class="w-4 h-4"></i> GitHub
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t border-slate-900 text-slate-600 text-xs font-mono">
+    © 2026 Muhammad Nur Diaztara Portfolio
+  </footer>
+
+  <!-- ==================== PROJECT DETAIL MODALS ==================== -->
+
+  <!-- Modal 1: Cafe Monitoring -->
+  <div id="modal-cafe" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 sm:p-6">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 space-y-6 relative">
+      <button onclick="closeModal('modal-cafe')" class="absolute top-6 right-6 text-slate-400 hover:text-white">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="border-b border-slate-800 pb-4">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Project Detail</span>
+        <h2 class="text-2xl font-bold text-slate-100 mt-1">Cafe Monitoring System</h2>
+      </div>
+
+      <!-- Overview -->
+      <div>
+        <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Overview</h3>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Sistem monitoring cafe yang memanfaatkan computer vision untuk memantau waktu tunggu pelanggan, jumlah pelanggan, dan kondisi meja. Sistem ini dirancang untuk mendeteksi okupansi meja secara real-time dan menghitung estimasi waktu tunggu pelanggan secara otomatis.
+        </p>
+      </div>
+
+      <!-- Hardware & Software Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-950/50 p-4 rounded-xl border border-slate-800">
+        <div>
+          <h4 class="font-mono text-xs text-indigo-400 mb-2 flex items-center gap-1.5"><i data-lucide="cpu" class="w-4 h-4"></i> Hardware</h4>
+          <ul class="text-xs text-slate-300 space-y-1 font-mono">
+            <li>• Raspberry Pi 5</li>
+            <li>• Hailo-8L AI Accelerator</li>
+            <li>• USB Webcam</li>
+            <li>• ESP32 NodeMCU</li>
+            <li>• Buzzer SFM-27</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs text-emerald-400 mb-2 flex items-center gap-1.5"><i data-lucide="code" class="w-4 h-4"></i> Software</h4>
+          <ul class="text-xs text-slate-300 space-y-1 font-mono">
+            <li>• YOLOv8 Nano</li>
+            <li>• OpenCV</li>
+            <li>• Flask API</li>
+            <li>• Tailwind CSS</li>
+            <li>• Firebase</li>
+            <li>• MQTT Protocol</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Results & Lessons Learned -->
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Results</h3>
+          <p class="text-slate-300 text-sm">
+            Mencapai performa inference rate hingga 60 FPS menggunakan akselerasi Hardware Hailo-8L NPU pada resolusi 1080p, dan mengurangi latensi transmisi IoT ke dashboard hingga di bawah 150ms via MQTT.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Lessons Learned</h3>
+          <p class="text-slate-300 text-sm">
+            Memahami pentingnya thermal management pada SBC Raspberry Pi saat pemrosesan AI serta teknik optimasi bobot model deep learning untuk Edge AI.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 flex justify-end">
+        <button onclick="closeModal('modal-cafe')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono px-4 py-2 rounded-lg">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Serupiah Web App -->
+  <div id="modal-serupiah" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 sm:p-6">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 space-y-6 relative">
+      <button onclick="closeModal('modal-serupiah')" class="absolute top-6 right-6 text-slate-400 hover:text-white">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="border-b border-slate-800 pb-4">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Project Detail</span>
+        <h2 class="text-2xl font-bold text-slate-100 mt-1">Serupiah Web</h2>
+      </div>
+
+      <div>
+        <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Overview</h3>
+        <p class="text-slate-300 text-sm leading-relaxed">
+           Sebuah aplikasi web interaktif berbasis AI yang dirancang untuk mengubah cara siswa mempelajari sejarah Indonesia melalui uang kertas. Website akan menampilkan informasi sejarah berdasarkan uang rupiah yang dideteksi. Sistem berjalan sepenuhnya di browser sehingga tidak membutuhkan koneksi internet server backend.
+        </p>
+      </div>
+
+      <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800">
+        <h4 class="font-mono text-xs text-emerald-400 mb-2">Technical Highlights</h4>
+        <ul class="text-xs text-slate-300 space-y-1 font-mono">
+          <li>• 7 Classes (Rp1.000 - Rp100.000)</li>
+          <li>• Model Architecture: MobileNetV3 Small</li>
+          <li>• Framework: TensorFlow, React</li>
+          <li>• Device Inference: Client-side</li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Results</h3>
+          <p class="text-slate-300 text-sm">
+            Model berukuran sangat ringan (&lt; 5MB) dengan akurasi klasifikasi sebesar 98.2% dan durasi inferensi kurang dari 50ms di perangkat smartphone.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 flex justify-end">
+        <button onclick="closeModal('modal-serupiah')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono px-4 py-2 rounded-lg">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Gojek Review Sentiment Analysis -->
+  <div id="modal-gojek" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 sm:p-6">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 space-y-6 relative">
+      <button onclick="closeModal('modal-gojek')" class="absolute top-6 right-6 text-slate-400 hover:text-white">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="border-b border-slate-800 pb-4">
+        <span class="text-xs font-mono text-amber-400 uppercase tracking-wider">Project Detail</span>
+        <h2 class="text-2xl font-bold text-slate-100 mt-1">Gojek Review Sentiment Analysis</h2>
+      </div>
+
+      <div>
+        <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Overview</h3>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Klasifikasi sentimen berskala besar untuk lebih dari 30.000 ulasan pengguna Gojek di Indonesia dengan menggunakan Transformer dan model ML. Dilakukan eksperimen komparasi algoritma ML klasik dan berbasis Transformer untuk menganalisis dan mengklasifikasikan sentimen pengguna terhadap aplikasi Gojek di Google Play Store.
+        </p>
+      </div>
+
+      <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800">
+        <h4 class="font-mono text-xs text-emerald-400 mb-2">Technical Highlights</h4>
+        <ul class="text-xs text-slate-300 space-y-1 font-mono">
+          <li>• Dataset: 30,000 Indonesian User Reviews</li>
+          <li>• Preprocessing: Stemming, Stopword Removal, Slang Normalization</li>
+          <li>• Transformer based Labeling (IndoBERT)</li>
+          <li>• Baseline Comparison: TF-IDF + SVM, Random Forest + Word2Vec, & Random Forest + TF-IDF</li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Results</h3>
+          <p class="text-slate-300 text-sm">
+            Model SVM + TF-IDF menghasilkan akurasi tertinggi sebesar 86.56% dibandingkan dengan model klasik Random Forest + TF-IDF (79.29%) dan Random Forest + Word2Vec (85.23%). Hasil ini menunjukkan keunggulan model berbasis Transformer dalam memahami konteks bahasa Indonesia.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 flex justify-end">
+        <button onclick="closeModal('modal-gojek')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono px-4 py-2 rounded-lg">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Sentiment Classification Web -->
+  <div id="modal-sentiment" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 sm:p-6">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 space-y-6 relative">
+      <button onclick="closeModal('modal-sentiment')" class="absolute top-6 right-6 text-slate-400 hover:text-white">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="border-b border-slate-800 pb-4">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Project Detail</span>
+        <h2 class="text-2xl font-bold text-slate-100 mt-1">Sentiment Classification Web</h2>
+      </div>
+
+      <div>
+        <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Overview</h3>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Aplikasi web berbasis AI untuk menganalisis sentimen komentar pengguna dengan menggunakan model BERT dan Transformer untuk klasifikasi teks bahasa Inggris. Teks dibagi menjadi tiga kategori, positif, negatif, dan netral. Sistem ini dirancang untuk memberikan wawasan cepat tentang opini pengguna terhadap layanan tertentu.
+        </p>
+      </div>
+
+      <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800">
+        <h4 class="font-mono text-xs text-emerald-400 mb-2">Technical Highlights</h4>
+        <ul class="text-xs text-slate-300 space-y-1 font-mono">
+          <li>• Class Dataset: Positive, Negative, Neutral</li>
+          <li>• Preprocessing: Cleaning, Mapping, Encoding</li>
+          <li>• Transformer Architecture</li>
+          <li>• Training Algorithm: Backpropagation</li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Results</h3>
+          <p class="text-slate-300 text-sm">
+            Model Backpropagation mencapai akurasi 78.23% dalam mengklasifikasikan sentimen komentar pengguna. Hasil ini menunjukkan efektivitas arsitektur Transformer dalam memahami konteks bahasa Inggris.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 flex justify-end">
+        <button onclick="closeModal('modal-sentiment')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono px-4 py-2 rounded-lg">Close</button>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal 5: Nagari Guguak Malalo Web -->
+    <div id="modal-nagari" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 sm:p-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 space-y-6 relative">
+        <button onclick="closeModal('modal-nagari')" class="absolute top-6 right-6 text-slate-400 hover:text-white">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+
+        <div class="border-b border-slate-800 pb-4">
+          <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Project Detail</span>
+          <h2 class="text-2xl font-bold text-slate-100 mt-1">Nagari Guguak Malalo Web</h2>
+        </div>
+
+        <div>
+          <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Overview</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Platform digital berbasis web yang dikembangkan untuk mendukung layanan publik di salah satu nagari di Kabupaten Tanah Datar, Sumatera Barat. Website ini menyediakan informasi terkait layanan publik, tempat wisata dan berita di nagari.
+          </p>
+        </div>
+
+        <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800">
+          <h4 class="font-mono text-xs text-emerald-400 mb-2">Technical Highlights</h4>
+          <ul class="text-xs text-slate-300 space-y-1 font-mono">
+            <li>• Class Dataset: Positive, Negative, Neutral</li>
+            <li>• Preprocessing: Cleaning, Mapping, Encoding</li>
+            <li>• Transformer Architecture</li>
+            <li>• Training Algorithm: Backpropagation</li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Results</h3>
+            <p class="text-slate-300 text-sm">
+              Model Backpropagation mencapai akurasi 78.23% dalam mengklasifikasikan sentimen komentar pengguna. Hasil ini menunjukkan efektivitas arsitektur Transformer dalam memahami konteks bahasa Inggris.
+            </p>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-slate-800 flex justify-end">
+          <button onclick="closeModal('modal-nagari')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono px-4 py-2 rounded-lg">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Theme Toggle Script
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    themeToggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+
+    // Modal Controls
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Intersection Observer untuk Animasi Entrance saat Scroll
+    document.addEventListener("DOMContentLoaded", () => {
+      // Tangkap semua elemen yang memiliki kelas animasi
+      const revealElements = document.querySelectorAll(".reveal-left, .reveal-right, .reveal-up");
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target); // Hentikan observasi setelah dianimasikan
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.15, // Memicu animasi ketika 15% elemen terlihat
+        rootMargin: "0px 0px -40px 0px"
+      });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+    });
+  </script>
+</body>
+</html>
