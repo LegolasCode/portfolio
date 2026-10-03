@@ -162,7 +162,7 @@
             <div
               class="relative w-full h-full rounded-2xl bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 overflow-hidden shadow-2xl flex items-center justify-center">
               <!-- Ganti 'photo.jpg' dengan path/url foto kamu -->
-              <img src="src/assets/profile-photo.jpg" alt="Muhammad Nur Diaztara"
+              <img src="src/assets/profile-photo.png" alt="Muhammad Nur Diaztara"
                 class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" />
 
               <!-- Overlay Badge Technical (Opsional) -->
@@ -251,6 +251,10 @@
             <span
               class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">C/C++</span>
             <span
+              class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">HTML</span>
+            <span
+              class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">CSS</span>
+            <span
               class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">JavaScript</span>
             <span
               class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">PHP</span>
@@ -284,6 +288,8 @@
             <span
               class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">TensorFlow</span>
             <span
+              class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">PyTorch</span>
+            <span
               class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">OpenCV</span>
           </div>
         </div>
@@ -296,7 +302,8 @@
           </div>
           <div class="flex flex-wrap gap-2">
             <span
-              class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Excel</span>
+              class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Microsoft
+              Excel</span>
             <span
               class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Pandas</span>
             <span
@@ -306,7 +313,17 @@
             <span
               class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Seaborn</span>
             <span
-              class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Streamlit</span>
+              class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">ETL
+              Pipeline</span>
+            <span
+              class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Data
+              Cleaning</span>
+            <span
+              class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Exploratory
+              Data Analysis</span>
+            <span
+              class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Data
+              Visualization</span>
           </div>
         </div>
 
@@ -319,6 +336,9 @@
           <div class="flex flex-wrap gap-2">
             <span
               class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Raspberry
+              Pi</span>
+            <span
+              class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Revolutional
               Pi</span>
             <span
               class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">ESP32</span>
@@ -369,6 +389,11 @@
             <span
               class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Git
               / GitHub</span>
+            <span
+              class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Power
+              BI</span>
+            <span
+              class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Streamlit</span>
             <span
               class="px-3 py-1 bg-slate-800/80 text-slate-300 text-xs font-mono rounded-md border border-slate-700">Linux</span>
             <span
@@ -730,11 +755,113 @@
             <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
               <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Embedded System</span>
               <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">IoT</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Electronics</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Hardware</span>
             </div>
           </div>
         </div>
 
+        <!-- CARD 7: Analysis of Food Consumption Indonesian Population -->
+        <div onclick="openModal('modal-food-consumption')"
+          class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+          <div>
+            <div
+              class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+              <img src="src/assets/projects/food-consumption.png" alt="Food Consumption Analysis"
+                class="w-full h-full object-cover object-center">
+            </div>
+
+            <div class="p-6">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">
+                  Analysis of Food Consumption Indonesian Population</h3>
+                <i data-lucide="arrow-up-right"
+                  class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+              </div>
+              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                Analisis pola konsumsi makanan pada populasi Indonesia dari Badan Pangan Nasional tahun 2026.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Python</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Microsoft Excel</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Exploratory Data
+                Analysis</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Data Visualization</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 8: Cardiovascular Disease Prediction System -->
+        <div onclick="openModal('modal-cardiovascular-disease')"
+          class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+          <div>
+            <div
+              class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+              <img src="src/assets/projects/cardiovascular-prediction.png"
+                alt="Cardiovascular Disease Prediction System" class="w-full h-full object-cover object-center">
+            </div>
+
+            <div class="p-6">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Cardiovascular
+                  Disease Prediction System</h3>
+                <i data-lucide="arrow-up-right"
+                  class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+              </div>
+              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                Sistem prediksi penyakit kardiovaskular menggunakan data kesehatan dan machine learning.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Machine Learning</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Random Forest</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Model Evaluation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 9: Retail Sales ETL Pipeline & SQL Analytic  -->
+        <div onclick="openModal('modal-retail-sales')"
+          class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+          <div>
+            <div
+              class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+              <img src="src/assets/projects/retail-sales.png" alt="Retail Sales ETL Pipeline & SQL Analytic"
+                class="w-full h-full object-cover object-center">
+            </div>
+
+            <div class="p-6">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Retail Sales
+                  ETL Pipeline & SQL Analytic </h3>
+                <i data-lucide="arrow-up-right"
+                  class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+              </div>
+              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                Membangun pipeline ETL menggunakan Python dan Pandas untuk membersihkan, memvalidasi, dan
+                mentransformasi data transaksi sebelum dimuat ke database.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">ETL</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Data Engineering</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Python</span>
+              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">SQL</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -750,7 +877,7 @@
           <!-- Item 1: Lab System Digital -->
           <div class="relative group">
             <span
-              class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-cyan-400 ring-4 ring-slate-950"></span>
+              class="absolute -left-7.75 top-1.5 w-2.5 h-2.5 rounded-full bg-cyan-400 ring-4 ring-slate-950"></span>
             <span class="text-xs font-mono text-cyan-400">Jun 2025 - Jul 2026</span>
             <h3 class="font-bold text-slate-100 text-lg">Koordinator Asisten Laboratorium</h3>
             <p class="text-xs text-slate-400 mb-2">Laboratorium Sistem Digital dan Arsitektur Komputer — Padang,
@@ -783,7 +910,7 @@
           <!-- Item 2: PT PLN (Persero) -->
           <div class="relative group">
             <span
-              class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+              class="absolute -left-7.75 top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
             <span class="text-xs font-mono text-slate-400">Jan 2025 - Feb 2025</span>
             <h3 class="font-bold text-slate-100 text-lg">Data Analyst Intern</h3>
             <p class="text-xs text-slate-400 mb-2">PT. PLN (Persero) ULP Belanti — Padang, Indonesia</p>
@@ -816,7 +943,7 @@
           <!-- Item 3: Programming Specialist -->
           <div class="relative group">
             <span
-              class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+              class="absolute -left-7.75 top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
             <span class="text-xs font-mono text-slate-400">Feb 2025 - Nov 2025</span>
             <h3 class="font-bold text-slate-100 text-lg">Programming Specialist</h3>
             <p class="text-xs text-slate-400 mb-2">Universitas Andalas Robotic Team — Padang, Indonesia</p>
@@ -849,7 +976,7 @@
           <!-- Item 4: Research and Development -->
           <div class="relative group">
             <span
-              class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+              class="absolute -left-7.75 top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
             <span class="text-xs font-mono text-slate-400">Sep 2024 - Jul 2025</span>
             <h3 class="font-bold text-slate-100 text-lg">Staff Research and Development</h3>
             <p class="text-xs text-slate-400 mb-2">Laboratorium Sistem Digital dan Arsitektur Komputer — Padang,
@@ -883,7 +1010,7 @@
           <!-- Item 5: Badan Eksekutif Mahasiswa FTI -->
           <div class="relative group">
             <span
-              class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+              class="absolute -left-7.75 top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
             <span class="text-xs font-mono text-slate-400">Feb 2024 - Dec 2024</span>
             <h3 class="font-bold text-slate-100 text-lg">Staff Advokasi dan Kesejahteraan Mahasiswa</h3>
             <p class="text-xs text-slate-400 mb-2">Badan Eksekutif Mahasiswa FTI — Padang, Indonesia</p>
@@ -916,7 +1043,7 @@
           <!-- Item 6: Himpunan Mahasiswa Teknik Komputer -->
           <div class="relative group">
             <span
-              class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+              class="absolute -left-7.75 top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
             <span class="text-xs font-mono text-slate-400">Feb 2024 - Dec 2024</span>
             <h3 class="font-bold text-slate-100 text-lg">Bendahara Internal</h3>
             <p class="text-xs text-slate-400 mb-2">Himpunan Mahasiswa Teknik Komputer — Padang, Indonesia</p>
@@ -957,7 +1084,7 @@
           <!-- Item 1: Pengabdian Masyarakat -->
           <div class="relative group">
             <span
-              class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-cyan-400 ring-4 ring-slate-950"></span>
+              class="absolute -left-7.75 top-1.5 w-2.5 h-2.5 rounded-full bg-cyan-400 ring-4 ring-slate-950"></span>
             <span class="text-xs font-mono text-cyan-400">Jan 2026</span>
             <h3 class="font-bold text-slate-100 text-lg">Running Text Development</h3>
             <p class="text-xs text-slate-400 mb-2">Teknik Komputer Universitas Andalas — Padang, Indonesia</p>
@@ -981,7 +1108,7 @@
           <!-- Item 2: Pemateri Workshop UI/UX -->
           <div class="relative group">
             <span
-              class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+              class="absolute -left-7.75 top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
             <span class="text-xs font-mono text-slate-400">Oct 2025</span>
             <h3 class="font-bold text-slate-100 text-lg">Pemateri Workshop UI/UX</h3>
             <p class="text-xs text-slate-400 mb-2">Himpunan Mahasiswa Teknik Komputer — Padang, Indonesia</p>
@@ -1005,7 +1132,7 @@
           <!-- Item 3: Pemateri Workshop Python -->
           <div class="relative group">
             <span
-              class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+              class="absolute -left-7.75 top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
             <span class="text-xs font-mono text-slate-400">Sep 2025</span>
             <h3 class="font-bold text-slate-100 text-lg">Pemateri Workshop Dasar Python</h3>
             <p class="text-xs text-slate-400 mb-2">Badan Eksekutif Mahasiswa FTI — Padang, Indonesia</p>
@@ -1030,7 +1157,7 @@
           <!-- Item 4: CORE3D 2025 -->
           <div class="relative group">
             <span
-              class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+              class="absolute -left-7.75 top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
             <span class="text-xs font-mono text-slate-400">Oct 2024 - May 2025</span>
             <h3 class="font-bold text-slate-100 text-lg">Koordinator Sponsorship</h3>
             <p class="text-xs text-slate-400 mb-2">CORE3D 2025 — Padang, Indonesia</p>
@@ -1054,7 +1181,7 @@
           <!-- Item 5: BAKTI FTI 2024 -->
           <div class="relative group">
             <span
-              class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+              class="absolute -left-7.75 top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
             <span class="text-xs font-mono text-slate-400">Apr 2024 - Aug 2024</span>
             <h3 class="font-bold text-slate-100 text-lg">Staff Acara</h3>
             <p class="text-xs text-slate-400 mb-2">Bimbingan Aktivitas Kemahasiswaan dalam Tradisi Ilmiah FTI 2024 —
@@ -1079,7 +1206,7 @@
           <!-- Item 6: CORE3D 2024 -->
           <div class="relative group">
             <span
-              class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+              class="absolute -left-7.75 top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
             <span class="text-xs font-mono text-slate-400">Jan 2024 - May 2024</span>
             <h3 class="font-bold text-slate-100 text-lg">Staff Sponsorship</h3>
             <p class="text-xs text-slate-400 mb-2">CORE3D 2024 — Padang, Indonesia</p>
@@ -1103,7 +1230,7 @@
           <!-- Item 7: LKMM-TD FTI 2023 -->
           <div class="relative group">
             <span
-              class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+              class="absolute -left-7.75 top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
             <span class="text-xs font-mono text-slate-400">Apr 2023 - Sep 2023</span>
             <h3 class="font-bold text-slate-100 text-lg">Staff Acara</h3>
             <p class="text-xs text-slate-400 mb-2">Latihan Kepemimpinan Manajemen Mahasiswa Tingkat Dasar FTI 2023 —
@@ -1140,6 +1267,24 @@
             class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
             <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
             <div>
+              <h3 class="font-bold text-sm text-slate-200">Bootcamp Data Analyst</h3>
+              <p class="text-xs text-slate-400">SpecialSkill (Sep 2026)</p>
+            </div>
+          </div>
+
+          <div
+            class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
+            <div>
+              <h3 class="font-bold text-sm text-slate-200">Belajar Dasar Cloud dan Gen AI di AWS</h3>
+              <p class="text-xs text-slate-400">Dicoding Indonesia (Sep 2026)</p>
+            </div>
+          </div>
+
+          <div
+            class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
+            <div>
               <h3 class="font-bold text-sm text-slate-200">Belajar Machine Learning untuk Pemula</h3>
               <p class="text-xs text-slate-400">Dicoding Indonesia (Mar 2026)</p>
             </div>
@@ -1168,7 +1313,7 @@
             <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
             <div>
               <h3 class="font-bold text-sm text-slate-200">Machine Learning with Python</h3>
-              <p class="text-xs text-slate-400">Coursera (Nov 2025)</p>
+              <p class="text-xs text-slate-400">IBM (Nov 2025)</p>
             </div>
           </div>
 
@@ -1177,7 +1322,7 @@
             <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
             <div>
               <h3 class="font-bold text-sm text-slate-200">Developing Front-End Apps with React</h3>
-              <p class="text-xs text-slate-400">Coursera (Nov 2025)</p>
+              <p class="text-xs text-slate-400">IBM (Nov 2025)</p>
             </div>
           </div>
 
@@ -1186,7 +1331,7 @@
             <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
             <div>
               <h3 class="font-bold text-sm text-slate-200">Belajar Dasar Pemograman Javascript</h3>
-              <p class="text-xs text-slate-400">Dicoding Indonesia (Oct 2025)</p>
+              <p class="text-xs text-slate-400">IBM (Oct 2025)</p>
             </div>
           </div>
 
@@ -1196,7 +1341,7 @@
             <div>
               <h3 class="font-bold text-sm text-slate-200">Introduction to Deep Learning and Neural Networks with Keras
               </h3>
-              <p class="text-xs text-slate-400">Coursera (Sep 2025)</p>
+              <p class="text-xs text-slate-400">IBM (Sep 2025)</p>
             </div>
           </div>
 
@@ -1205,7 +1350,7 @@
             <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
             <div>
               <h3 class="font-bold text-sm text-slate-200">Exploratory Data Analysis for Machine Learning</h3>
-              <p class="text-xs text-slate-400">Coursera (May 2025)</p>
+              <p class="text-xs text-slate-400">IBM (May 2025)</p>
             </div>
           </div>
 
@@ -1214,7 +1359,7 @@
             <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
             <div>
               <h3 class="font-bold text-sm text-slate-200">Python for Data Science, AI & Development</h3>
-              <p class="text-xs text-slate-400">Coursera (Mar 2025)</p>
+              <p class="text-xs text-slate-400">IBM (Mar 2025)</p>
             </div>
           </div>
         </div>
@@ -1226,6 +1371,24 @@
           Certifications & Competitions
         </h2>
         <div class="space-y-4">
+          <div
+            class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="award" class="w-6 h-6 text-amber-400 shrink-0"></i>
+            <div>
+              <h3 class="font-bold text-sm text-slate-200">Microsoft Power BI Certificate</h3>
+              <p class="text-xs text-slate-400">Mita Indonesia Berdaya (Sep 2026)</p>
+            </div>
+          </div>
+
+          <div
+            class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="award" class="w-6 h-6 text-amber-400 shrink-0"></i>
+            <div>
+              <h3 class="font-bold text-sm text-slate-200">Aktivis Kampus Fakultas Teknologi Informasi Wisuda IV</h3>
+              <p class="text-xs text-slate-400">Fakultas Teknologi Informasi (Sep 2026)</p>
+            </div>
+          </div>
+
           <div
             class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
             <i data-lucide="award" class="w-6 h-6 text-amber-400 shrink-0"></i>
@@ -1268,7 +1431,7 @@
 
     <!-- RESUME CALLOUT -->
     <section id="resume"
-      class="reveal bg-slate-900 border border-slate-800 dark:bg-gradient-to-r dark:from-slate-900 dark:via-slate-900/90 dark:to-indigo-950/40 dark:border-slate-800 rounded-2xl p-8 md:p-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+      class="reveal bg-slate-900 border border-slate-800 dark:bg-linear-to-r dark:from-slate-900 dark:via-slate-900/90 dark:to-indigo-950/40 dark:border-slate-800 rounded-2xl p-8 md:p-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
       <div class="space-y-2 max-w-xl">
         <h2 class="text-2xl font-bold text-white">Interested in working together?</h2>
         <p class="text-slate-300 dark:text-slate-400 text-sm">
@@ -1453,7 +1616,7 @@
       </button>
 
       <div class="border-b border-slate-800 pb-4">
-        <span class="text-xs font-mono text-amber-400 uppercase tracking-wider">Project Detail</span>
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Project Detail</span>
         <h2 class="text-2xl font-bold text-slate-100 mt-1">Gojek Review Sentiment Analysis</h2>
       </div>
 
@@ -1582,7 +1745,8 @@
         <div>
           <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Results</h3>
           <p class="text-slate-300 text-sm">
-            Website berhasil diimplementasikan dan digunakan oleh masyarakat nagari untuk mengakses informasi pertanian, peternakan, tenaga kesehatan, tempat wisata, berita terkini, dan layanan administrasi. 
+            Website berhasil diimplementasikan dan digunakan oleh masyarakat nagari untuk mengakses informasi pertanian,
+            peternakan, tenaga kesehatan, tempat wisata, berita terkini, dan layanan administrasi.
             Sistem ini meningkatkan transparansi dan aksesibilitas informasi bagi warga nagari.
           </p>
         </div>
@@ -1611,8 +1775,10 @@
       <div>
         <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Overview</h3>
         <p class="text-slate-300 text-sm leading-relaxed">
-          Running Text LED sebagai papan informasi dan pemberitahuan untuk dipasang di Kebun Binatang Kinantan Bukittinggi.
-          Sistem ini dirancang untuk memberikan informasi terkini kepada pengunjung mengenai nama lokasi, informasi waktu, dan larangan merokok.
+          Running Text LED sebagai papan informasi dan pemberitahuan untuk dipasang di Kebun Binatang Kinantan
+          Bukittinggi.
+          Sistem ini dirancang untuk memberikan informasi terkini kepada pengunjung mengenai nama lokasi, informasi
+          waktu, dan larangan merokok.
         </p>
       </div>
 
@@ -1630,8 +1796,174 @@
         <div>
           <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Results</h3>
           <p class="text-slate-300 text-sm">
-            Sistem ini berhasil memberikan informasi kepada pengunjung Kebun Binatang Kinantan secara real-time, meningkatkan pengalaman pengunjung dan mempermudah penyampaian informasi penting.
-            Pengguna dapat dengan mudah mengubah teks yang ditampilkan melalui aplikasi kontrol LED, sehingga informasi selalu up-to-date.
+            Sistem ini berhasil memberikan informasi kepada pengunjung Kebun Binatang Kinantan secara real-time,
+            meningkatkan pengalaman pengunjung dan mempermudah penyampaian informasi penting.
+            Pengguna dapat dengan mudah mengubah teks yang ditampilkan melalui aplikasi kontrol LED, sehingga informasi
+            selalu up-to-date.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 flex justify-end">
+        <button onclick="closeModal('modal-nagari')"
+          class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono px-4 py-2 rounded-lg">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7: Analysis of Food Consumption Indonesian Population -->
+  <div id="modal-food-consumption"
+    class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 sm:p-6">
+    <div
+      class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 space-y-6 relative">
+      <button onclick="closeModal('modal-food-consumption')"
+        class="absolute top-6 right-6 text-slate-400 hover:text-white">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="border-b border-slate-800 pb-4">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Project Detail</span>
+        <h2 class="text-2xl font-bold text-slate-100 mt-1">Analysis of Food Consumption Indonesian Population</h2>
+      </div>
+      <div>
+        <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Overview</h3>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Analisis pola konsumsi makanan pada populasi Indonesia dari Badan Pangan Nasional tahun 2026, bertujuan untuk
+          memahami pola dan tren dalam konsumsi makanan, serta dampaknya terhadap kebutuhan masyarakat.
+        </p>
+      </div>
+
+      <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800">
+        <h4 class="font-mono text-xs text-emerald-400 mb-2">Technical Highlights</h4>
+        <ul class="text-xs text-slate-300 space-y-1 font-mono">
+          <li>• Data Source: Badan Pangan Nasional</li>
+          <li>• Data Cleaning: Python, Google Colab</li>
+          <li>• Exploratory Data Analysis: Microsoft Excel</li>
+          <li>• Statistic Descriptive: Microsoft Excel</li>
+          <li>• Data Visualization: Microsoft Excel</li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Results</h3>
+          <p class="text-slate-300 text-sm">
+            Hasil analisis menunjukkan beberapa hal berikut:
+          <ul class="list-disc list-inside mt-2">
+            <li>3 komoditas nasional berdasarkan rata-rata konsumsi adalah Buah (257,09), Beras (125,84), dan Terigu
+              (120,52).</li>
+            <li>Indonesia Barat sangat bergantung pada beras, umbi-umbian menjadi pilar di wilayah Indonesia Timur.</li>
+            <li>Sulawesi Selatan memiliki konsumsi tertinggi, disusul oleh Jawa Tengah, Banten, dan DI Yogyakarta.</li>
+            <li>Kelompok Sayur dan Buah memimpin rata-rata konsumsi, diikuti oleh Kelompok Serealia dan Umbi-umbian.
+            </li>
+            <li>Komoditas Sagu dan Jagung mencapai puncak konsumsi tinggi di daerah Maluku, Papua, dan Nusa Tenggara
+            </li>
+          </ul>
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 flex justify-end">
+        <button onclick="closeModal('modal-nagari')"
+          class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono px-4 py-2 rounded-lg">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8: Cardiovascular Disease Prediction System -->
+  <div id="modal-cardiovascular-disease"
+    class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 sm:p-6">
+    <div
+      class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 space-y-6 relative">
+      <button onclick="closeModal('modal-cardiovascular-disease')"
+        class="absolute top-6 right-6 text-slate-400 hover:text-white">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="border-b border-slate-800 pb-4">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Project Detail</span>
+        <h2 class="text-2xl font-bold text-slate-100 mt-1">Cardiovascular Disease Prediction System</h2>
+      </div>
+      <div>
+        <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Overview</h3>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Sistem prediksi penyakit kardiovaskular menggunakan data kesehatan dan machine learning. Sistem ini dirancang
+          untuk memprediksi risiko penyakit kardiovaskular pada individu berdasarkan data kesehatan dan gaya hidup
+          mereka.
+          Dengan menggunakan model Random Forest, sistem ini dapat membantu memprediksi dan memberikan probabilitas
+          risiko penyakit jantung.
+        </p>
+      </div>
+
+      <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800">
+        <h4 class="font-mono text-xs text-emerald-400 mb-2">Technical Highlights</h4>
+        <ul class="text-xs text-slate-300 space-y-1 font-mono">
+          <li>• Algoritma Machine Learning: Random Forest</li>
+          <li>• Data Cleaning: Python, Numpy, Pandas, Google Colab</li>
+          <li>• Exploratory Data Analysis: Seaborn, Matplotlib</li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Results</h3>
+          <p class="text-slate-300 text-sm">
+            Sistem memiliki beberapa input, termasuk usia, jenis kelamin, tekanan darah, kadar kolesterol, dan indeks
+            massa tubuh (BMI). Model Random Forest memberikan akurasi prediksi sebesar 87%, precision 90%, recall 86%,
+            dan F1-score 86% dalam mengidentifikasi risiko penyakit kardiovaskular pada individu.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 flex justify-end">
+        <button onclick="closeModal('modal-nagari')"
+          class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono px-4 py-2 rounded-lg">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9: Retail Sales ETL Pipeline & SQL Analytic  -->
+  <div id="modal-retail-sales"
+    class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 sm:p-6">
+    <div
+      class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 space-y-6 relative">
+      <button onclick="closeModal('modal-retail-sales')" class="absolute top-6 right-6 text-slate-400 hover:text-white">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="border-b border-slate-800 pb-4">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Project Detail</span>
+        <h2 class="text-2xl font-bold text-slate-100 mt-1">Retail Sales ETL Pipeline & SQL Analytic</h2>
+      </div>
+      <div>
+        <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Overview</h3>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Membangun pipeline ETL menggunakan Python untuk membersihkan, memvalidasi, dan mentransformasi data transaksi
+          sebelum dimuat ke database.
+          Sistem ini dirancang untuk mengelola dan menganalisis data penjualan barang. Proses ETL (Extract, Transform,
+          Load) digunakan untuk mengumpulkan data, membersihkannya, dan memuatnya ke dalam MySQL untuk analisis lebih
+          lanjut.
+        </p>
+      </div>
+
+      <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800">
+        <h4 class="font-mono text-xs text-emerald-400 mb-2">Technical Highlights</h4>
+        <ul class="text-xs text-slate-300 space-y-1 font-mono">
+          <li>• Programming Language: Python</li>
+          <li>• Data Cleaning: Python, Numpy, Pandas</li>
+          <li>• Database: MySQL</li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Results</h3>
+          <p class="text-slate-300 text-sm">
+            Sistem ini memiliki tahapan ETL yang berhasil membersihkan dan memvalidasi data penjualan, serta memuatnya
+            ke dalam database MySQL. Beberapa data yang diproses adalah customer, product, harga, total, metode
+            pembayaran, dan status.
+            Analisis SQL dilakukan untuk mendapatkan wawasan tentang penjualan, termasuk total penjualan per produk,
+            jumlah transaksi per metode pembayaran, dan tren penjualan bulanan.
           </p>
         </div>
       </div>
