@@ -41,19 +41,27 @@
       will-change: opacity, transform;
     }
 
-    /* Elemen Kiri: Muncul dari kiri */
+    /* Di HP (mobile), kurangi jarak pergeseran agar tidak merusak layout viewport */
     .reveal-left {
-      transform: translateX(-50px);
+      transform: translateX(-20px);
     }
-
-    /* Elemen Kanan: Muncul dari kanan */
     .reveal-right {
-      transform: translateX(50px);
+      transform: translateX(20px);
+    }
+    .reveal-up {
+      transform: translateY(25px);
     }
 
-    /* Elemen Standar: Muncul dari bawah (untuk section 1 kolom) */
-    .reveal-up {
-      transform: translateY(35px);
+    @media (min-width: 768px) {
+      .reveal-left {
+        transform: translateX(-50px);
+      }
+      .reveal-right {
+        transform: translateX(50px);
+      }
+      .reveal-up {
+        transform: translateY(35px);
+      }
     }
 
     /* Active state saat masuk viewport */
@@ -133,17 +141,17 @@
           <!-- Tombol Aksi (CTA) -->
           <div class="flex flex-wrap items-center gap-4">
             <a href="#projects"
-              class="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold px-6 py-3 rounded-lg transition-all shadow-lg shadow-cyan-500/20">
+              class="w-full sm:w-auto inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold px-6 py-3 rounded-lg transition-all shadow-lg shadow-cyan-500/20">
               <i data-lucide="folder-code" class="w-4 h-4"></i>
               View My Projects
             </a>
             <a href="#resume"
-              class="inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 px-6 py-3 rounded-lg transition-all">
+              class="w-full sm:w-auto inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 px-6 py-3 rounded-lg transition-all">
               <i data-lucide="file-down" class="w-4 h-4"></i>
               Download CV
             </a>
             <a href="#contact"
-              class="inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 px-6 py-3 rounded-lg transition-all">
+              class="w-full sm:w-auto inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 px-6 py-3 rounded-lg transition-all">
               <i data-lucide="phone" class="w-4 h-4"></i>
               Contact Me
             </a>
@@ -418,7 +426,7 @@
 
         <!-- Skill 1: Cross-Disciplinary Collaboration -->
         <div
-          class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
+          class="bg-slate-900/60 border border-slate-800 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
           <div
             class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <i data-lucide="users" class="w-5 h-5"></i>
@@ -433,7 +441,7 @@
 
         <!-- Skill 2: Critical Thinking -->
         <div
-          class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
+          class="bg-slate-900/60 border border-slate-800 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
           <div
             class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <i data-lucide="brain" class="w-5 h-5"></i>
@@ -448,7 +456,7 @@
 
         <!-- Skill 3: Adaptability & Rapid Learning -->
         <div
-          class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
+          class="bg-slate-900/60 border border-slate-800 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
           <div
             class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <i data-lucide="zap" class="w-5 h-5"></i>
@@ -463,7 +471,7 @@
 
         <!-- Skill 4: Time Management -->
         <div
-          class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
+          class="bg-slate-900/60 border border-slate-800 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
           <div
             class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <i data-lucide="clock" class="w-5 h-5"></i>
@@ -478,7 +486,7 @@
 
         <!-- Skill 5: Communication -->
         <div
-          class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
+          class="bg-slate-900/60 border border-slate-800 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
           <div
             class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <i data-lucide="message-circle" class="w-5 h-5"></i>
@@ -493,7 +501,7 @@
 
         <!-- Skill 6: Problem Solving -->
         <div
-          class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
+          class="bg-slate-900/60 border border-slate-800 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
           <div
             class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <i data-lucide="bug" class="w-5 h-5"></i>
@@ -508,7 +516,7 @@
 
         <!-- Skill 7: Leadership -->
         <div
-          class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
+          class="bg-slate-900/60 border border-slate-800 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
           <div
             class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <i data-lucide="crown" class="w-5 h-5"></i>
@@ -523,7 +531,7 @@
 
         <!-- Skill 8: Emotional Intelligence -->
         <div
-          class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
+          class="bg-slate-900/60 border border-slate-800 rounded-xl p-6 hover:border-cyan-500/50 transition-all group">
           <div
             class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <i data-lucide="heart" class="w-5 h-5"></i>
