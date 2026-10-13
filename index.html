@@ -555,322 +555,438 @@
             Projects
           </h2>
           <p class="text-slate-400 text-sm mt-1">Klik card untuk membuka detail teknis, hardware setup, dan arsitektur
-            sistem.</p>
+            sistem. Geser ke samping untuk melihat proyek di setiap kategori</p>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- KATEGORI 1: IoT & Embedded System -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-mono font-semibold text-emerald-400 flex items-center gap-2">
+          <i data-lucide="cpu" class="w-5 h-5"></i> IoT & Embedded System
+        </h3>
 
-        <!-- CARD 1: Cafe Monitoring -->
-        <div onclick="openModal('modal-cafe')"
-          class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
-          <div>
-            <!-- Image Placeholder / Preview -->
-            <div
-              class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
-              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
-              <img src="src/assets/projects/cafe-monitoring.jpeg" alt="Cafe Monitoring System"
-                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
-            </div>
+        <!-- Swiper Container -->
+        <div class="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-slate-800">
+          <!-- CARD 1: Cafe Monitoring -->
+          <div class="min-w-[300px] sm:min-w-[350px] snap-start bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+            <div onclick="openModal('modal-cafe')"
+              class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+              <div>
+                <!-- Image Placeholder / Preview -->
+                <div
+                  class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+                  <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+                  <img src="src/assets/projects/cafe-monitoring.jpeg" alt="Cafe Monitoring System"
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+                </div>
 
-            <div class="p-6">
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Cafe Monitoring
-                  System</h3>
-                <i data-lucide="arrow-up-right"
-                  class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                <div class="p-6">
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Cafe Monitoring
+                      System</h3>
+                    <i data-lucide="arrow-up-right"
+                      class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                  </div>
+                  <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                    Sistem pemantauan kafe cerdas yang memanfaatkan teknologi penglihatan komputer untuk memantau waktu
+                    tunggu pelanggan dan kondisi meja.
+                  </p>
+                </div>
               </div>
-              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
-                Sistem pemantauan kafe cerdas yang memanfaatkan teknologi penglihatan komputer untuk memantau waktu
-                tunggu pelanggan dan kondisi meja.
-              </p>
-            </div>
-          </div>
 
-          <div class="p-6 pt-0">
-            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Raspberry Pi 5</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">YOLOv8</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Hailo-8L</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">MQTT</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 2: Serupiah Web App -->
-        <div onclick="openModal('modal-serupiah')"
-          class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
-          <div>
-            <div
-              class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
-              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
-              <img src="src/assets/projects/serupiah-web.jpg" alt="Serupiah Web App"
-                class="w-full h-full object-cover object-center">
-            </div>
-
-            <div class="p-6">
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Serupiah Web
-                  App</h3>
-                <i data-lucide="arrow-up-right"
-                  class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+              <div class="p-6 pt-0">
+                <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Raspberry Pi 5</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">YOLOv8</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Hailo-8L</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">MQTT</span>
+                </div>
               </div>
-              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
-                Sebuah aplikasi web interaktif berbasis AI yang dirancang untuk mengubah cara siswa mempelajari sejarah
-                Indonesia melalui uang kertas.
-              </p>
             </div>
           </div>
 
-          <div class="p-6 pt-0">
-            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">MobileNetV3</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">TensorFlow.js</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">React</span>
-            </div>
-          </div>
-        </div>
+          <!-- CARD 6: Running Text -->
+          <div class="min-w-[300px] sm:min-w-[350px] snap-start bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+            <div onclick="openModal('modal-running-text')"
+              class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+              <div>
+                <div
+                  class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+                  <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+                  <img src="src/assets/projects/running-text.jpeg" alt="Running Text Web"
+                    class="w-full h-full object-cover object-center">
+                </div>
 
-        <!-- CARD 3: Gojek Sentiment Analysis -->
-        <div onclick="openModal('modal-gojek')"
-          class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
-          <div>
-            <div
-              class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
-              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
-              <img src="src/assets/projects/gojek-sentiment.png" alt="Gojek Sentiment Analysis"
-                class="w-full h-full object-cover object-center">
-            </div>
-
-            <div class="p-6">
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Gojek Sentiment
-                  Analysis</h3>
-                <i data-lucide="arrow-up-right"
-                  class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                <div class="p-6">
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Running Text
+                      Information Board</h3>
+                    <i data-lucide="arrow-up-right"
+                      class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                  </div>
+                  <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                    Running Text LED sebagai papan informasi dan pemberitahuan untuk dipasang di tempat umum.
+                  </p>
+                </div>
               </div>
-              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
-                Klasifikasi sentimen berskala besar untuk lebih dari 30.000 ulasan pengguna Gojek di Indonesia dengan
-                menggunakan Transformer dan model ML.
-              </p>
-            </div>
-          </div>
 
-          <div class="p-6 pt-0">
-            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">NLP</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">IndoBERT</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">TF-IDF</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">SVM</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 4: Sentiment Classification Web -->
-        <div onclick="openModal('modal-sentiment')"
-          class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
-          <div>
-            <div
-              class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
-              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
-              <img src="src/assets/projects/sentiment-analysis.png" alt="Sentiment Analysis Web"
-                class="w-full h-full object-cover object-center">
-            </div>
-
-            <div class="p-6">
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Sentiment
-                  Classification Web</h3>
-                <i data-lucide="arrow-up-right"
-                  class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+              <div class="p-6 pt-0">
+                <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Embedded System</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">IoT</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Hardware</span>
+                </div>
               </div>
-              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
-                Aplikasi web berbasis AI untuk menganalisis sentimen komentar pengguna dengan menggunakan model BERT dan
-                Transformer untuk klasifikasi teks bahasa Inggris.
-              </p>
             </div>
           </div>
 
-          <div class="p-6 pt-0">
-            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">NLP</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">BERT</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Transformer</span>
-            </div>
-          </div>
-        </div>
+          <!-- CARD 10: Line Follower Robot -->
+          <div class="min-w-[300px] sm:min-w-[350px] snap-start bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+            <div onclick="openModal('modal-line-follower-robot')"
+              class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+              <div>
+                <div
+                  class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+                  <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+                  <img src="src/assets/projects/line-follower-robot.jpeg" alt="Line Follower Robot"
+                    class="w-full h-full object-cover object-center">
+                </div>
 
-        <!-- CARD 5: Nagari Guguak Malalo Web -->
-        <div onclick="openModal('modal-nagari')"
-          class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
-          <div>
-            <div
-              class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
-              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
-              <img src="src/assets/projects/nagari-web.png" alt="Nagari Guguak Malalo Web"
-                class="w-full h-full object-cover object-center">
-            </div>
-
-            <div class="p-6">
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Nagari Guguak
-                  Malalo Web</h3>
-                <i data-lucide="arrow-up-right"
-                  class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                <div class="p-6">
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Line Follower Robot</h3>
+                    <i data-lucide="arrow-up-right"
+                      class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                  </div>
+                  <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                    Line Follower Robot adalah robot yang dapat mengikuti garis di permukaan. Robot ini dapat berjalan secara otomatis mengikuti garis dan lintasan yang ada.
+                  </p>
+                </div>
               </div>
-              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
-                Platform digital berbasis web yang dikembangkan untuk mendukung layanan publik di salah satu nagari di
-                Kabupaten Tanah Datar, Sumatera Barat.
-              </p>
-            </div>
-          </div>
 
-          <div class="p-6 pt-0">
-            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Laravel</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Javascript</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Bootstrap</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">MySQL</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 6: Running Text -->
-        <div onclick="openModal('modal-running-text')"
-          class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
-          <div>
-            <div
-              class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
-              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
-              <img src="src/assets/projects/running-text.jpeg" alt="Running Text Web"
-                class="w-full h-full object-cover object-center">
-            </div>
-
-            <div class="p-6">
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Running Text
-                  Information Board</h3>
-                <i data-lucide="arrow-up-right"
-                  class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+              <div class="p-6 pt-0">
+                <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Embedded System</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Sensor</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Arduino Uno</span>
+                </div>
               </div>
-              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
-                Running Text LED sebagai papan informasi dan pemberitahuan untuk dipasang di tempat umum.
-              </p>
             </div>
           </div>
-
-          <div class="p-6 pt-0">
-            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Embedded System</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">IoT</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Hardware</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 7: Analysis of Food Consumption Indonesian Population -->
-        <div onclick="openModal('modal-food-consumption')"
-          class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
-          <div>
-            <div
-              class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
-              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
-              <img src="src/assets/projects/food-consumption.png" alt="Food Consumption Analysis"
-                class="w-full h-full object-cover object-center">
-            </div>
-
-            <div class="p-6">
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">
-                  Analysis of Food Consumption Indonesian Population</h3>
-                <i data-lucide="arrow-up-right"
-                  class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
-              </div>
-              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
-                Analisis pola konsumsi makanan pada populasi Indonesia dari Badan Pangan Nasional tahun 2026.
-              </p>
-            </div>
-          </div>
-
-          <div class="p-6 pt-0">
-            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Python</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Microsoft Excel</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Exploratory Data
-                Analysis</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Data Visualization</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 8: Cardiovascular Disease Prediction System -->
-        <div onclick="openModal('modal-cardiovascular-disease')"
-          class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
-          <div>
-            <div
-              class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
-              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
-              <img src="src/assets/projects/cardiovascular-prediction.png"
-                alt="Cardiovascular Disease Prediction System" class="w-full h-full object-cover object-center">
-            </div>
-
-            <div class="p-6">
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Cardiovascular
-                  Disease Prediction System</h3>
-                <i data-lucide="arrow-up-right"
-                  class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
-              </div>
-              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
-                Sistem prediksi penyakit kardiovaskular menggunakan data kesehatan dan machine learning.
-              </p>
-            </div>
-          </div>
-
-          <div class="p-6 pt-0">
-            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Machine Learning</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Random Forest</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Model Evaluation</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 9: Retail Sales ETL Pipeline & SQL Analytic  -->
-        <div onclick="openModal('modal-retail-sales')"
-          class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
-          <div>
-            <div
-              class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
-              <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
-              <img src="src/assets/projects/retail-sales.png" alt="Retail Sales ETL Pipeline & SQL Analytic"
-                class="w-full h-full object-cover object-center">
-            </div>
-
-            <div class="p-6">
-              <div class="flex items-center justify-between gap-2 mb-2">
-                <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Retail Sales
-                  ETL Pipeline & SQL Analytic </h3>
-                <i data-lucide="arrow-up-right"
-                  class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
-              </div>
-              <p class="text-slate-400 text-sm mb-4 line-clamp-2">
-                Membangun pipeline ETL menggunakan Python dan Pandas untuk membersihkan, memvalidasi, dan
-                mentransformasi data transaksi sebelum dimuat ke database.
-              </p>
-            </div>
-          </div>
-
-          <div class="p-6 pt-0">
-            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">ETL</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Data Engineering</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Python</span>
-              <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">SQL</span>
-            </div>
-          </div>
-        </div>
+        </div> 
       </div>
+
+      <!-- KATEGORI 2: Data & AI -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-mono font-semibold text-emerald-400 flex items-center gap-2">
+          <i data-lucide="brain" class="w-5 h-5"></i> Data & AI
+        </h3>
+
+        <!-- Swiper Container -->
+        <div class="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-slate-800">
+          <!-- CARD 2: Serupiah Web App -->
+          <div class="min-w-[300px] sm:min-w-[350px] snap-start bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+            <div onclick="openModal('modal-serupiah')"
+              class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+              <div>
+                <div
+                  class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+                  <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+                  <img src="src/assets/projects/serupiah-web.jpg" alt="Serupiah Web App"
+                    class="w-full h-full object-cover object-center">
+                </div>
+
+                <div class="p-6">
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Serupiah Web
+                      App</h3>
+                    <i data-lucide="arrow-up-right"
+                      class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                  </div>
+                  <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                    Sebuah aplikasi web interaktif berbasis AI yang dirancang untuk mengubah cara siswa mempelajari sejarah
+                    Indonesia melalui uang kertas.
+                  </p>
+                </div>
+              </div>
+
+              <div class="p-6 pt-0">
+                <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">MobileNetV3</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">TensorFlow.js</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">React</span>
+                </div>
+              </div>
+            </div>           
+          </div>
+
+          <!-- CARD 3: Gojek Sentiment Analysis -->
+          <div class="min-w-[300px] sm:min-w-[350px] snap-start bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+            <div onclick="openModal('modal-gojek')"
+              class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+              <div>
+                <div
+                  class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+                  <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+                  <img src="src/assets/projects/gojek-sentiment.png" alt="Gojek Sentiment Analysis"
+                    class="w-full h-full object-cover object-center">
+                </div>
+
+                <div class="p-6">
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Gojek Sentiment
+                      Analysis</h3>
+                    <i data-lucide="arrow-up-right"
+                      class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                  </div>
+                  <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                    Klasifikasi sentimen berskala besar untuk lebih dari 30.000 ulasan pengguna Gojek di Indonesia dengan
+                    menggunakan Transformer dan model ML.
+                  </p>
+                </div>
+              </div>
+
+              <div class="p-6 pt-0">
+                <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">NLP</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">IndoBERT</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">TF-IDF</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">SVM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 4: Sentiment Classification Web -->
+          <div class="min-w-[300px] sm:min-w-[350px] snap-start bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+            <div onclick="openModal('modal-sentiment')"
+              class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+              <div>
+                <div
+                  class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+                  <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+                  <img src="src/assets/projects/sentiment-analysis.png" alt="Sentiment Analysis Web"
+                    class="w-full h-full object-cover object-center">
+                </div>
+
+                <div class="p-6">
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Sentiment
+                      Classification Web</h3>
+                    <i data-lucide="arrow-up-right"
+                      class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                  </div>
+                  <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                    Aplikasi web berbasis AI untuk menganalisis sentimen komentar pengguna dengan menggunakan model BERT dan
+                    Transformer untuk klasifikasi teks bahasa Inggris.
+                  </p>
+                </div>
+              </div>
+
+              <div class="p-6 pt-0">
+                <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">NLP</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">BERT</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Transformer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 7: Analysis of Food Consumption Indonesian Population -->
+          <div class="min-w-[300px] sm:min-w-[350px] snap-start bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+            <div onclick="openModal('modal-food-consumption')"
+              class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+              <div>
+                <div
+                  class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+                  <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+                  <img src="src/assets/projects/food-consumption.png" alt="Food Consumption Analysis"
+                    class="w-full h-full object-cover object-center">
+                </div>
+
+                <div class="p-6">
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">
+                      Analysis of Food Consumption Indonesian Population</h3>
+                    <i data-lucide="arrow-up-right"
+                      class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                  </div>
+                  <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                    Analisis pola konsumsi makanan pada populasi Indonesia dari Badan Pangan Nasional tahun 2026.
+                  </p>
+                </div>
+              </div>
+
+              <div class="p-6 pt-0">
+                <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Python</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Microsoft Excel</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Exploratory Data
+                    Analysis</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Data Visualization</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 8: Cardiovascular Disease Prediction System -->
+          <div class="min-w-[300px] sm:min-w-[350px] snap-start bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+            <div onclick="openModal('modal-cardiovascular-disease')"
+              class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+              <div>
+                <div
+                  class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+                  <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+                  <img src="src/assets/projects/cardiovascular-prediction.png"
+                    alt="Cardiovascular Disease Prediction System" class="w-full h-full object-cover object-center">
+                </div>
+
+                <div class="p-6">
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Cardiovascular
+                      Disease Prediction System</h3>
+                    <i data-lucide="arrow-up-right"
+                      class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                  </div>
+                  <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                    Sistem prediksi penyakit kardiovaskular menggunakan data kesehatan dan machine learning.
+                  </p>
+                </div>
+              </div>
+
+              <div class="p-6 pt-0">
+                <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Machine Learning</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Random Forest</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Model Evaluation</span>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+
+          <!-- CARD 9: Retail Sales ETL Pipeline & SQL Analytic  -->
+          <div class="min-w-[300px] sm:min-w-[350px] snap-start bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+            <div onclick="openModal('modal-retail-sales')"
+              class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+              <div>
+                <div
+                  class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+                  <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+                  <img src="src/assets/projects/retail-sales.png" alt="Retail Sales ETL Pipeline & SQL Analytic"
+                    class="w-full h-full object-cover object-center">
+                </div>
+
+                <div class="p-6">
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Retail Sales
+                      ETL Pipeline & SQL Analytic </h3>
+                    <i data-lucide="arrow-up-right"
+                      class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                  </div>
+                  <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                    Membangun pipeline ETL menggunakan Python dan Pandas untuk membersihkan, memvalidasi, dan
+                    mentransformasi data transaksi sebelum dimuat ke database.
+                  </p>
+                </div>
+              </div>
+
+              <div class="p-6 pt-0">
+                <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">ETL</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Data Engineering</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Python</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">SQL</span>
+                </div>
+              </div>
+            </div>         
+          </div>
+        </div> 
+      </div>
+
+      <!-- KATEGORI 1: Software Development -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-mono font-semibold text-emerald-400 flex items-center gap-2">
+          <i data-lucide="code" class="w-5 h-5"></i> Software Development
+        </h3>
+
+        <!-- Swiper Container -->
+        <div class="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-slate-800">
+          <!-- CARD 5: Nagari Guguak Malalo Web -->
+          <div class="min-w-[300px] sm:min-w-[350px] snap-start bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+            <div onclick="openModal('modal-nagari')"
+              class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+              <div>
+                <div
+                  class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+                  <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+                  <img src="src/assets/projects/nagari-web.png" alt="Nagari Guguak Malalo Web"
+                    class="w-full h-full object-cover object-center">
+                </div>
+
+                <div class="p-6">
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Nagari Guguak
+                      Malalo Web</h3>
+                    <i data-lucide="arrow-up-right"
+                      class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                  </div>
+                  <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                    Platform digital berbasis web yang dikembangkan untuk mendukung layanan publik di salah satu nagari di
+                    Kabupaten Tanah Datar, Sumatera Barat.
+                  </p>
+                </div>
+              </div>
+
+              <div class="p-6 pt-0">
+                <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Laravel</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Javascript</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Bootstrap</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">MySQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 11: Makmur Food Marketplace -->
+          <div class="min-w-[300px] sm:min-w-[350px] snap-start bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+            <div onclick="openModal('modal-makmur-web')"
+              class="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all cursor-pointer flex flex-col justify-between">
+              <div>
+                <div
+                  class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
+                  <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent z-10"></div>
+                  <img src="src/assets/projects/makmur-web.jpeg" alt="Makmur Food Marketplace"
+                    class="w-full h-full object-cover object-center">
+                </div>
+
+                <div class="p-6">
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <h3 class="font-bold text-lg text-slate-100 group-hover:text-cyan-400 transition-colors">Makmur Food Marketplace</h3>
+                    <i data-lucide="arrow-up-right"
+                      class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                  </div>
+                  <p class="text-slate-400 text-sm mb-4 line-clamp-2">
+                    Makmur adalah solusi digital yang dirancang untuk mengurangi limbah makanan sekaligus membantu masyarakat mendapatkan makanan berkualitas dengan harga yang sangat terjangkau. 
+                  </p>
+                </div>
+              </div>
+
+              <div class="p-6 pt-0">
+                <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-300">
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Next.js</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Expres.js</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Midtrans</span>
+                  <span class="px-2 py-0.5 bg-cyan-950/60 border border-cyan-800/50 rounded">Price Prediction</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
     </section>
 
     <!-- EXPERIENCE & VOLUNTEER SECTION -->
@@ -1211,6 +1327,29 @@
             </div>
           </div>
 
+          <!-- Item 6: Saura Choir -->
+          <div class="relative group">
+            <span
+              class="absolute -left-7.75 top-1.5 w-2.5 h-2.5 rounded-full bg-slate-700 ring-4 ring-slate-950"></span>
+            <span class="text-xs font-mono text-slate-400">Apr 2024</span>
+            <h3 class="font-bold text-slate-100 text-lg">Paduan Suara FTI</h3>
+            <p class="text-xs text-slate-400 mb-2">Saura Choir — Padang, Indonesia</p>
+            <p class="text-sm text-slate-400 mb-4">Menampilkan pertunjukan musik dan vokal grup dalam acara FTI.</p>
+
+            <!-- Documentation Photos Grid -->
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <div
+                class="relative aspect-video rounded-lg overflow-hidden border border-slate-800 bg-slate-900 group/img">
+                <img src="src/assets/experience-volunteer/paduan-suara.jpeg" alt="Dokumentasi Saura Choir 2024"
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-110" />
+                <div
+                  class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-2">
+                  <span class="text-[10px] text-slate-200 font-mono">Anggota Paduan Suara</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- Item 6: CORE3D 2024 -->
           <div class="relative group">
             <span
@@ -1275,6 +1414,24 @@
             class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
             <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
             <div>
+              <h3 class="font-bold text-sm text-slate-200">Data Scientist Supervisor</h3>
+              <p class="text-xs text-slate-400">Digital Talent Academy (Oct 2026)</p>
+            </div>
+          </div>
+
+          <div
+            class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
+            <div>
+              <h3 class="font-bold text-sm text-slate-200">Associate Data Scientist</h3>
+              <p class="text-xs text-slate-400">Digital Talent Academy (Oct 2026)</p>
+            </div>
+          </div>
+
+          <div
+            class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
+            <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
+            <div>
               <h3 class="font-bold text-sm text-slate-200">Bootcamp Data Analyst</h3>
               <p class="text-xs text-slate-400">SpecialSkill (Sep 2026)</p>
             </div>
@@ -1302,8 +1459,8 @@
             class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
             <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0"></i>
             <div>
-              <h3 class="font-bold text-sm text-slate-200">Belajar Penerapan Data Science dengan Microsoft Fabric</h3>
-              <p class="text-xs text-slate-400">Dicoding Indonesia (Mar 2026)</p>
+              <h3 class="font-bold text-sm text-slate-200">Belajar Penerapan Data Science dengan Microsoft Fabric dan Membangun Aplikasi Gen AI dengan Microsoft Azure</h3>
+              <p class="text-xs text-slate-400">Microsoft Elevate (Mar 2026)</p>
             </div>
           </div>
 
@@ -1401,7 +1558,7 @@
             class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex items-start gap-4 hover:border-slate-700 transition-colors">
             <i data-lucide="award" class="w-6 h-6 text-amber-400 shrink-0"></i>
             <div>
-              <h3 class="font-bold text-sm text-slate-200">Toefl Prediction</h3>
+              <h3 class="font-bold text-sm text-slate-200">Toefl Prediction Score 470</h3>
               <p class="text-xs text-slate-400">Universitas Andalas (Aug 2026)</p>
             </div>
           </div>
@@ -2014,6 +2171,119 @@
 
       <div class="pt-4 border-t border-slate-800 flex justify-end">
         <button onclick="closeModal('modal-nagari')"
+          class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono px-4 py-2 rounded-lg">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6: Line Follower Robot -->
+  <div id="modal-line-follower-robot"
+    class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 sm:p-6">
+    <div
+      class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 space-y-6 relative">
+      <button onclick="closeModal('modal-line-follower-robot')" class="absolute top-6 right-6 text-slate-400 hover:text-white">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="relative w-full h-64 sm:h-80 rounded-xl mt-8 overflow-hidden border border-slate-800 bg-slate-950 flex items-center justify-center">
+        <img src="src/assets/projects/line-follower-robot.jpeg" alt="Line Follower Robot" class="w-full h-full object-contain object-center" />
+      </div>
+
+      <div class="border-b border-slate-800 pb-4">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Project Detail</span>
+        <h2 class="text-2xl font-bold text-slate-100 mt-1">Line Follower Robot</h2>
+      </div>
+      <div>
+        <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Overview</h3>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Line Follower Robot adalah robot yang dapat mengikuti garis di permukaan. Robot ini dapat berjalan secara otomatis mengikuti garis dan lintasan yang ada.
+          Robot ini dirancang untuk dasar robotika dan kompetisi Line Follower
+        </p>
+      </div>
+
+      <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800">
+        <h4 class="font-mono text-xs text-emerald-400 mb-2">Components</h4>
+        <ul class="text-xs text-slate-300 space-y-1 font-mono">
+          <li>• Arduino Uno</li>
+          <li>• Sensor Infrared</li>
+          <li>• Motor DC</li>
+          <li>• Baterai Li-Po 7.4V</li>
+          <li>• Motor Driver L298N</li>
+          <li>• Roda Karet</li>
+          <li>• Chassis Robot</li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Results</h3>
+          <p class="text-slate-300 text-sm">
+            Robot ini dapat berjalan sesuai dengan jalur yang diberikan. Melalui program dan ambang batas, kecepatan roda robot dapat diatur.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 flex justify-end">
+        <button onclick="closeModal('modal-line-follower-robot')"
+          class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono px-4 py-2 rounded-lg">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 11: Makmur Food Marketplace -->
+  <div id="modal-makmur-web"
+    class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 sm:p-6">
+    <div
+      class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 space-y-6 relative">
+      <button onclick="closeModal('modal-makmur-web')" class="absolute top-6 right-6 text-slate-400 hover:text-white">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="relative w-full h-64 sm:h-80 rounded-xl mt-8 overflow-hidden border border-slate-800 bg-slate-950 flex items-center justify-center">
+        <img src="src/assets/projects/makmur-web.jpeg" alt="Makmur Food Marketplace" class="w-full h-full object-contain object-center" />
+      </div>
+
+      <div class="border-b border-slate-800 pb-4">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Project Detail</span>
+        <h2 class="text-2xl font-bold text-slate-100 mt-1">Makmur Food Marketplace</h2>
+      </div>
+      <div>
+        <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Overview</h3>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Makmur adalah solusi digital yang dirancang untuk mengurangi limbah makanan sekaligus membantu masyarakat mendapatkan makanan berkualitas dengan harga yang sangat terjangkau.
+          Melalui platform ini, toko roti, kafe, dan warung makan lokal dapat dengan mudah menjual sisa makanan harian mereka yang masih segar dan aman dikonsumsi—melalui kupon digital dengan diskon.
+        </p>
+      </div>
+
+      <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800">
+        <h4 class="font-mono text-xs text-emerald-400 mb-2">Technical Highlights</h4>
+        <ul class="text-xs text-slate-300 space-y-1 font-mono">
+          <li>• Front-End: Next.js, React, Tailwind CSS</li>
+          <li>• Back-End: Express.js</li>
+          <li>• Database: PostgreSQL</li>
+          <li>• Payment Gateway: Midtrans</li>
+          <li>• ML Algorithm: Decision Tree</li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-mono text-sm text-cyan-400 mb-2">/ Results</h3>
+          <p class="text-slate-300 text-sm">
+            Fitur Utama Platform:
+          </p>
+          <ul class="text-xs text-slate-300 space-y-1 font-mono">
+            <li>• Accountless authentication: Pengguna dapat melakukan transaksi tanpa perlu membuat akun, sehingga memudahkan mereka. Proses login dan otentikasi sepenuhnya ditangani oleh penjual.</li>
+            <li>• Dynamic Vendor Dashboard: Memungkinkan pemilik toko memantau tingkat popularitas, total stok produk, dan statistik penjualan harian secara real-time.</li>
+            <li>• Interactive Product Discovery: Halaman detail produk yang intuitif, dilengkapi sistem navigasi yang mengarahkan pengguna langsung ke lokasi toko/penjual untuk kemudahan pengambilan barang.</li>
+            <li>• QR Code Validation: Untuk setiap pembelian, kode QR unik sebagai kupon akan dihasilkan yang dapat dipindai dengan aman di toko dan tercatat secara otomatis.</li>
+            <li>• Smart Dynamic Pricing Engine: Menerapkan sistem penetapan harga cerdas menggunakan Pohon Keputusan untuk mengklasifikasikan kupon berdasarkan harga jual makanan. Model penetapan harga dinamis ini mengevaluasi fitur-fitur utama berikut, yaitu fitur gambar makanan, waktu pembuatan, harga asli, jumlah stok, dan berat.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 flex justify-end">
+        <button onclick="closeModal('modal-line-follower-robot')"
           class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono px-4 py-2 rounded-lg">Close</button>
       </div>
     </div>
