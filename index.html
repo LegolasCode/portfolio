@@ -87,11 +87,13 @@
   <!-- NAVBAR -->
   <nav class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-md z-40 border-b border-slate-800/80">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <!-- Logo -->
       <a href="#" class="font-mono font-bold text-lg text-cyan-400 flex items-center gap-2">
         <i data-lucide="cpu" class="w-5 h-5"></i>
         <span>Diaztara</span>
       </a>
 
+      <!-- Desktop Menu -->
       <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
         <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
         <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
@@ -100,18 +102,50 @@
         <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
       </div>
 
-      <div class="flex items-center gap-4">
-        <!-- Theme Toggle -->
-        <button id="theme-toggle"
-          class="p-2 text-slate-400 hover:text-cyan-400 rounded-lg border border-slate-800 bg-slate-900">
-          <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
-          <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
-        </button>
+      <!-- Kanan: Theme Toggle & Mobile Menu Button -->
+      <div class="flex items-center gap-3">
+        <!-- Badge Available for Hire (Desktop) -->
         <a href="#contact"
-          class="hidden sm:inline-flex items-center gap-2 text-xs font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 px-3 py-1.5 rounded-md hover:bg-cyan-500/20 transition-all">
+          class="hidden lg:inline-flex items-center gap-2 text-xs font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 px-3 py-1.5 rounded-md hover:bg-cyan-500/20 transition-all">
           <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
           Available for hire
         </a>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle"
+          class="p-2 text-slate-400 hover:text-cyan-400 rounded-lg border border-slate-800 bg-slate-900 cursor-pointer">
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+          <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+        </button>
+
+        <!-- Tombol Hamburger (Mobile Only) -->
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()"
+          class="md:hidden p-2 text-slate-300 hover:text-cyan-400 rounded-lg border border-slate-800 bg-slate-900 cursor-pointer">
+          <i data-lucide="menu" id="menu-icon" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown dengan Animasi Slide Down -->
+    <div id="mobile-menu" 
+         class="md:hidden overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out bg-slate-950/95 border-b border-slate-800/80 backdrop-blur-xl">
+      <div class="px-6 py-6 space-y-4">
+        <nav class="flex flex-col space-y-3 font-medium text-slate-300">
+          <a href="#about" onclick="toggleMobileMenu()" class="hover:text-cyan-400 transition-colors py-1">About</a>
+          <a href="#skills" onclick="toggleMobileMenu()" class="hover:text-cyan-400 transition-colors py-1">Skills</a>
+          <a href="#projects" onclick="toggleMobileMenu()" class="hover:text-cyan-400 transition-colors py-1">Projects</a>
+          <a href="#experience-volunteer" onclick="toggleMobileMenu()" class="hover:text-cyan-400 transition-colors py-1">Experience</a>
+          <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-cyan-400 transition-colors py-1">Contact</a>
+        </nav>
+
+        <!-- Badge Available for Hire di Mobile Menu -->
+        <div class="pt-2 border-t border-slate-900">
+          <a href="#contact" onclick="toggleMobileMenu()"
+            class="inline-flex items-center gap-2 text-xs font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 px-3 py-1.5 rounded-md w-full justify-center">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            Available for hire
+          </a>
+        </div>
       </div>
     </div>
   </nav>
@@ -137,7 +171,7 @@
 
           <!-- Deskripsi -->
           <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mb-8 leading-relaxed">
-            Bachelor of Computer Engineering with a focus on modern IoT system, real-time computer vision, and edge AI
+            Bachelor of Computer Engineering with a focus on modern IoT system, data analysis, and edge AI
             processing.
           </p>
 
@@ -201,7 +235,7 @@
         <p class="text-slate-300 leading-relaxed text-lg">
           Saya adalah lulusan Sarjana Teknik Komputer yang sangat tertarik pada teknologi dan inovasi, dengan fokus
           utama pada Internet of Things (IoT), Artificial Intelligent (AI), dan Machine Learning. Saat ini, saya sedang
-          memperluas keahlian saya di bidang pengembangan web untuk mendukung dan mengintegrasikan pengetahuan saya di
+          memperluas keahlian saya di bidang analisis data untuk mendukung dan mengintegrasikan pengetahuan saya di
           berbagai bidang teknologi.
           Saya aktif di beberapa pengalaman Organisasi, Laboratorium, dan Proyek yang memungkinkan saya untuk mengasah
           keterampilan teknis dan kepemimpinan saya.
@@ -1691,12 +1725,52 @@
             <div class="flex items-start gap-4">
               <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0 mt-0.5"></i>
               <div>
-                <h3 class="font-bold text-sm text-slate-200">Associate Data Scientist - Nasional</h3>
-                <p class="text-xs text-slate-400">Digital Talent Academy (Oct 2026)</p>
+                <h3 class="font-bold text-sm text-slate-200">Fundamental of Deep Learning - Nasional</h3>
+                <p class="text-xs text-slate-400">Digital Talent Scholarship (Oct 2026)</p>
               </div>
             </div>
             <!-- Tombol Preview Sertifikat (Memicu Modal PDF) -->
-            <a href="src/assets/certificates/associate-data-scientist-nasional.pdf" 
+            <a href="https://digitalent.kominfo.go.id/cek-sertifikat" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-slate-800/80 hover:bg-slate-800 text-cyan-400 hover:text-cyan-300 border border-slate-700 rounded-md text-xs font-mono transition-all shrink-0">
+                <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+                <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+            </a>
+          </div>
+
+          <div
+            class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-slate-700 transition-colors">
+            <!-- Info Sertifikat -->
+            <div class="flex items-start gap-4">
+              <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0 mt-0.5"></i>
+              <div>
+                <h3 class="font-bold text-sm text-slate-200">Fundamental of Data Analyst - Nasional</h3>
+                <p class="text-xs text-slate-400">DQLab (Oct 2026)</p>
+              </div>
+            </div>
+            <!-- Tombol Preview Sertifikat (Memicu Modal PDF) -->
+            <a href="https://digitalent.kominfo.go.id/cek-sertifikat" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-slate-800/80 hover:bg-slate-800 text-cyan-400 hover:text-cyan-300 border border-slate-700 rounded-md text-xs font-mono transition-all shrink-0">
+                <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+                <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+            </a>
+          </div>
+
+          <div
+            class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-slate-700 transition-colors">
+            <!-- Info Sertifikat -->
+            <div class="flex items-start gap-4">
+              <i data-lucide="shield-check" class="w-6 h-6 text-cyan-400 shrink-0 mt-0.5"></i>
+              <div>
+                <h3 class="font-bold text-sm text-slate-200">Associate Data Scientist - Nasional</h3>
+                <p class="text-xs text-slate-400">Digital Talent Scholarship (Oct 2026)</p>
+              </div>
+            </div>
+            <!-- Tombol Preview Sertifikat (Memicu Modal PDF) -->
+            <a href="https://digitalent.kominfo.go.id/cek-sertifikat" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-slate-800/80 hover:bg-slate-800 text-cyan-400 hover:text-cyan-300 border border-slate-700 rounded-md text-xs font-mono transition-all shrink-0">
@@ -1716,7 +1790,7 @@
               </div>
             </div>
             <!-- Tombol Preview Sertifikat (Memicu Modal PDF) -->
-            <a href="src/assets/certificates/bootcamp-data-analyst.pdf" 
+            <a href="https://sertifikat.specialskill.id/sertifikat/view/SSB68E030" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-slate-800/80 hover:bg-slate-800 text-cyan-400 hover:text-cyan-300 border border-slate-700 rounded-md text-xs font-mono transition-all shrink-0">
@@ -1736,7 +1810,7 @@
               </div>
             </div>
             <!-- Tombol Preview Sertifikat (Memicu Modal PDF) -->
-            <a href="src/assets/certificates/belajar-dasar-cloud-dan-gen-ai-di-aws.pdf" 
+            <a href="https://www.dicoding.com/certificates/QLZ9N205DZ5D" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-slate-800/80 hover:bg-slate-800 text-cyan-400 hover:text-cyan-300 border border-slate-700 rounded-md text-xs font-mono transition-all shrink-0">
@@ -1756,7 +1830,7 @@
               </div>
             </div>
             <!-- Tombol Preview Sertifikat (Memicu Modal PDF) -->
-            <a href="src/assets/certificates/belajar-machine-learning-untuk-pemula.pdf" 
+            <a href="https://www.dicoding.com/certificates/07Z67V1R2PQR" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-slate-800/80 hover:bg-slate-800 text-cyan-400 hover:text-cyan-300 border border-slate-700 rounded-md text-xs font-mono transition-all shrink-0">
@@ -1777,7 +1851,7 @@
               </div>
             </div>
             <!-- Tombol Preview Sertifikat (Memicu Modal PDF) -->
-            <a href="src/assets/certificates/microsoft-elevate-training-center-2025.pdf" 
+            <a href="http://www.dicoding.com/elevate/certificates/PRE2RV567Y" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-slate-800/80 hover:bg-slate-800 text-cyan-400 hover:text-cyan-300 border border-slate-700 rounded-md text-xs font-mono transition-all shrink-0">
@@ -1797,7 +1871,7 @@
               </div>
             </div>
             <!-- Tombol Preview Sertifikat (Memicu Modal PDF) -->
-            <a href="src/assets/certificates/memulai-pemograman-dengan-python.pdf" 
+            <a href="https://www.dicoding.com/certificates/ERZR2Q34QPYV" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-slate-800/80 hover:bg-slate-800 text-cyan-400 hover:text-cyan-300 border border-slate-700 rounded-md text-xs font-mono transition-all shrink-0">
@@ -1817,7 +1891,7 @@
               </div>
             </div>
             <!-- Tombol Preview Sertifikat (Memicu Modal PDF) -->
-            <a href="src/assets/certificates/machine-learning-with-python.pdf" 
+            <a href="https://www.coursera.org/account/accomplishments/verify/XY7KJGIG288X" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-slate-800/80 hover:bg-slate-800 text-cyan-400 hover:text-cyan-300 border border-slate-700 rounded-md text-xs font-mono transition-all shrink-0">
@@ -1837,7 +1911,7 @@
               </div>
             </div>
             <!-- Tombol Preview Sertifikat (Memicu Modal PDF) -->
-            <a href="src/assets/certificates/developing-front-end-apps-with-react.pdf" 
+            <a href="https://www.coursera.org/account/accomplishments/records/X8KCK8LWQHTX" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-slate-800/80 hover:bg-slate-800 text-cyan-400 hover:text-cyan-300 border border-slate-700 rounded-md text-xs font-mono transition-all shrink-0">
@@ -1857,7 +1931,7 @@
               </div>
             </div>
             <!-- Tombol Preview Sertifikat (Memicu Modal PDF) -->
-            <a href="src/assets/certificates/belajar-dasar-pemograman-javascript.pdf" 
+            <a href="https://www.dicoding.com/certificates/NVP7J7DYOXR0" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-slate-800/80 hover:bg-slate-800 text-cyan-400 hover:text-cyan-300 border border-slate-700 rounded-md text-xs font-mono transition-all shrink-0">
@@ -1878,7 +1952,7 @@
               </div>
             </div>
             <!-- Tombol Preview Sertifikat (Memicu Modal PDF) -->
-            <a href="src/assets/certificates/introduction-to-deep-learning-and-neural-networks-with-keras.pdf" 
+            <a href="https://www.coursera.org/account/accomplishments/verify/QO9BXJD1A8QS" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-slate-800/80 hover:bg-slate-800 text-cyan-400 hover:text-cyan-300 border border-slate-700 rounded-md text-xs font-mono transition-all shrink-0">
@@ -1898,7 +1972,7 @@
               </div>
             </div>
             <!-- Tombol Preview Sertifikat (Memicu Modal PDF) -->
-            <a href="src/assets/certificates/exploratory-data-analysis-for-machine-learning.pdf" 
+            <a href="https://www.coursera.org/account/accomplishments/records/B6P91A0MY7H7" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-slate-800/80 hover:bg-slate-800 text-cyan-400 hover:text-cyan-300 border border-slate-700 rounded-md text-xs font-mono transition-all shrink-0">
@@ -1915,6 +1989,26 @@
           Certifications & Achievements
         </h2>
         <div class="space-y-4">
+          <div
+            class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-slate-700 transition-colors">
+            <!-- Info Sertifikat -->
+            <div class="flex items-start gap-4">
+              <i data-lucide="award" class="w-6 h-6 text-amber-400 shrink-0"></i>
+              <div>
+                <h3 class="font-bold text-sm text-slate-200">AWS Cloud Essentials KnowledgeBadge</h3>
+                <p class="text-xs text-slate-400">AWS (Oct 2026)</p>
+              </div>
+            </div>
+            <!-- Tombol Preview Sertifikat (Memicu Modal PDF) -->
+            <a href="https://www.credly.com/badges/77d88fd7-930a-4d86-bc49-96f2ffe8267a/linked_in_profile" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-slate-800/80 hover:bg-slate-800 text-amber-400 hover:text-amber-300 border border-slate-700 rounded-md text-xs font-mono transition-all shrink-0">
+                <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+                <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+            </a>
+          </div>
+          
           <div
             class="p-4 bg-slate-900/40 border border-slate-800 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-slate-700 transition-colors">
             <!-- Info Sertifikat -->
@@ -1988,7 +2082,7 @@
               </div>
             </div>
             <!-- Tombol Preview Sertifikat (Memicu Modal PDF) -->
-            <a href="src/assets/certificates/ibm-deep-learning-with-pytorch-keras-and-tensorflow-professional-certificate.pdf" 
+            <a href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/SLNO8D22YM6P" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-slate-800/80 hover:bg-slate-800 text-amber-400 hover:text-amber-300 border border-slate-700 rounded-md text-xs font-mono transition-all shrink-0">
@@ -2008,7 +2102,7 @@
               </div>
             </div>
             <!-- Tombol Preview Sertifikat (Memicu Modal PDF) -->
-            <a href="src/assets/certificates/professional-skills-for-the-workplace.pdf" 
+            <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/IGXP64249HF2" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-slate-800/80 hover:bg-slate-800 text-amber-400 hover:text-amber-300 border border-slate-700 rounded-md text-xs font-mono transition-all shrink-0">
@@ -2888,6 +2982,30 @@
       document.documentElement.classList.toggle('dark');
     });
 
+    // Fungsi Membuka & Menutup Menu Mobile
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      
+      // Periksa apakah menu sedang tertutup
+      const isClosed = mobileMenu.classList.contains('max-h-0');
+      
+      if (isClosed) {
+        // Buka menu (Slide Down)
+        mobileMenu.classList.remove('max-h-0', 'opacity-0');
+        mobileMenu.classList.add('max-h-96', 'opacity-100');
+        menuIcon.setAttribute('data-lucide', 'x');
+      } else {
+        // Tutup menu (Slide Up)
+        mobileMenu.classList.remove('max-h-96', 'opacity-100');
+        mobileMenu.classList.add('max-h-0', 'opacity-0');
+        menuIcon.setAttribute('data-lucide', 'menu');
+      }
+      
+      // Render ulang ikon Lucide
+      lucide.createIcons();
+    }
+    
     // Modal Controls
     function openModal(modalId) {
       document.getElementById(modalId).classList.remove('hidden');
